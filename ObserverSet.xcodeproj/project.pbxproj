@@ -16,6 +16,7 @@
 		31FF7A4115C7293200260FDF /* libObserverSet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FF7A2815C7293100260FDF /* libObserverSet.a */; };
 		31FF7A4715C7293200260FDF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 31FF7A4515C7293200260FDF /* InfoPlist.strings */; };
 		31FF7A4A15C7293200260FDF /* ObserverSetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF7A4915C7293200260FDF /* ObserverSetTests.m */; };
+		31FF7A5515C7353600260FDF /* ObserverSetReentrancyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF7A5415C7353600260FDF /* ObserverSetReentrancyTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		31FF7A4615C7293200260FDF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		31FF7A4815C7293200260FDF /* ObserverSetTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObserverSetTests.h; sourceTree = "<group>"; };
 		31FF7A4915C7293200260FDF /* ObserverSetTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObserverSetTests.m; sourceTree = "<group>"; };
+		31FF7A5315C7353600260FDF /* ObserverSetReentrancyTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObserverSetReentrancyTests.h; sourceTree = "<group>"; };
+		31FF7A5415C7353600260FDF /* ObserverSetReentrancyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObserverSetReentrancyTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,8 @@
 				31FF7A4815C7293200260FDF /* ObserverSetTests.h */,
 				31FF7A4915C7293200260FDF /* ObserverSetTests.m */,
 				31FF7A4315C7293200260FDF /* Supporting Files */,
+				31FF7A5315C7353600260FDF /* ObserverSetReentrancyTests.h */,
+				31FF7A5415C7353600260FDF /* ObserverSetReentrancyTests.m */,
 			);
 			path = ObserverSetTests;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31FF7A4A15C7293200260FDF /* ObserverSetTests.m in Sources */,
+				31FF7A5515C7353600260FDF /* ObserverSetReentrancyTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
