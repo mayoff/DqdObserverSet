@@ -1,0 +1,411 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		31FF7A2C15C7293100260FDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FF7A2B15C7293100260FDF /* Foundation.framework */; };
+		31FF7A3115C7293100260FDF /* ObserverSet.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 31FF7A3015C7293100260FDF /* ObserverSet.h */; };
+		31FF7A3315C7293100260FDF /* ObserverSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF7A3215C7293100260FDF /* ObserverSet.m */; };
+		31FF7A3B15C7293200260FDF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FF7A3A15C7293200260FDF /* SenTestingKit.framework */; };
+		31FF7A3D15C7293200260FDF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FF7A3C15C7293200260FDF /* UIKit.framework */; };
+		31FF7A3E15C7293200260FDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FF7A2B15C7293100260FDF /* Foundation.framework */; };
+		31FF7A4115C7293200260FDF /* libObserverSet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FF7A2815C7293100260FDF /* libObserverSet.a */; };
+		31FF7A4715C7293200260FDF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 31FF7A4515C7293200260FDF /* InfoPlist.strings */; };
+		31FF7A4A15C7293200260FDF /* ObserverSetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF7A4915C7293200260FDF /* ObserverSetTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		31FF7A3F15C7293200260FDF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 31FF7A1F15C7293100260FDF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 31FF7A2715C7293100260FDF;
+			remoteInfo = ObserverSet;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		31FF7A2615C7293100260FDF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				31FF7A3115C7293100260FDF /* ObserverSet.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		31FF7A2815C7293100260FDF /* libObserverSet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libObserverSet.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		31FF7A2B15C7293100260FDF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		31FF7A2F15C7293100260FDF /* ObserverSet-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObserverSet-Prefix.pch"; sourceTree = "<group>"; };
+		31FF7A3015C7293100260FDF /* ObserverSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObserverSet.h; sourceTree = "<group>"; };
+		31FF7A3215C7293100260FDF /* ObserverSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObserverSet.m; sourceTree = "<group>"; };
+		31FF7A3915C7293200260FDF /* ObserverSetTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObserverSetTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		31FF7A3A15C7293200260FDF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		31FF7A3C15C7293200260FDF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		31FF7A4415C7293200260FDF /* ObserverSetTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ObserverSetTests-Info.plist"; sourceTree = "<group>"; };
+		31FF7A4615C7293200260FDF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		31FF7A4815C7293200260FDF /* ObserverSetTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObserverSetTests.h; sourceTree = "<group>"; };
+		31FF7A4915C7293200260FDF /* ObserverSetTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObserverSetTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		31FF7A2515C7293100260FDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31FF7A2C15C7293100260FDF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31FF7A3515C7293100260FDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31FF7A3B15C7293200260FDF /* SenTestingKit.framework in Frameworks */,
+				31FF7A3D15C7293200260FDF /* UIKit.framework in Frameworks */,
+				31FF7A3E15C7293200260FDF /* Foundation.framework in Frameworks */,
+				31FF7A4115C7293200260FDF /* libObserverSet.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		31FF7A1D15C7293100260FDF = {
+			isa = PBXGroup;
+			children = (
+				31FF7A2D15C7293100260FDF /* ObserverSet */,
+				31FF7A4215C7293200260FDF /* ObserverSetTests */,
+				31FF7A2A15C7293100260FDF /* Frameworks */,
+				31FF7A2915C7293100260FDF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		31FF7A2915C7293100260FDF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				31FF7A2815C7293100260FDF /* libObserverSet.a */,
+				31FF7A3915C7293200260FDF /* ObserverSetTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		31FF7A2A15C7293100260FDF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				31FF7A2B15C7293100260FDF /* Foundation.framework */,
+				31FF7A3A15C7293200260FDF /* SenTestingKit.framework */,
+				31FF7A3C15C7293200260FDF /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		31FF7A2D15C7293100260FDF /* ObserverSet */ = {
+			isa = PBXGroup;
+			children = (
+				31FF7A3015C7293100260FDF /* ObserverSet.h */,
+				31FF7A3215C7293100260FDF /* ObserverSet.m */,
+				31FF7A2E15C7293100260FDF /* Supporting Files */,
+			);
+			path = ObserverSet;
+			sourceTree = "<group>";
+		};
+		31FF7A2E15C7293100260FDF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				31FF7A2F15C7293100260FDF /* ObserverSet-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		31FF7A4215C7293200260FDF /* ObserverSetTests */ = {
+			isa = PBXGroup;
+			children = (
+				31FF7A4815C7293200260FDF /* ObserverSetTests.h */,
+				31FF7A4915C7293200260FDF /* ObserverSetTests.m */,
+				31FF7A4315C7293200260FDF /* Supporting Files */,
+			);
+			path = ObserverSetTests;
+			sourceTree = "<group>";
+		};
+		31FF7A4315C7293200260FDF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				31FF7A4415C7293200260FDF /* ObserverSetTests-Info.plist */,
+				31FF7A4515C7293200260FDF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		31FF7A2715C7293100260FDF /* ObserverSet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31FF7A4D15C7293200260FDF /* Build configuration list for PBXNativeTarget "ObserverSet" */;
+			buildPhases = (
+				31FF7A2415C7293100260FDF /* Sources */,
+				31FF7A2515C7293100260FDF /* Frameworks */,
+				31FF7A2615C7293100260FDF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ObserverSet;
+			productName = ObserverSet;
+			productReference = 31FF7A2815C7293100260FDF /* libObserverSet.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		31FF7A3815C7293100260FDF /* ObserverSetTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31FF7A5015C7293200260FDF /* Build configuration list for PBXNativeTarget "ObserverSetTests" */;
+			buildPhases = (
+				31FF7A3415C7293100260FDF /* Sources */,
+				31FF7A3515C7293100260FDF /* Frameworks */,
+				31FF7A3615C7293100260FDF /* Resources */,
+				31FF7A3715C7293100260FDF /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				31FF7A4015C7293200260FDF /* PBXTargetDependency */,
+			);
+			name = ObserverSetTests;
+			productName = ObserverSetTests;
+			productReference = 31FF7A3915C7293200260FDF /* ObserverSetTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		31FF7A1F15C7293100260FDF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Rob Mayoff";
+			};
+			buildConfigurationList = 31FF7A2215C7293100260FDF /* Build configuration list for PBXProject "ObserverSet" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 31FF7A1D15C7293100260FDF;
+			productRefGroup = 31FF7A2915C7293100260FDF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				31FF7A2715C7293100260FDF /* ObserverSet */,
+				31FF7A3815C7293100260FDF /* ObserverSetTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		31FF7A3615C7293100260FDF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31FF7A4715C7293200260FDF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		31FF7A3715C7293100260FDF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		31FF7A2415C7293100260FDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31FF7A3315C7293100260FDF /* ObserverSet.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31FF7A3415C7293100260FDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31FF7A4A15C7293200260FDF /* ObserverSetTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		31FF7A4015C7293200260FDF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 31FF7A2715C7293100260FDF /* ObserverSet */;
+			targetProxy = 31FF7A3F15C7293200260FDF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		31FF7A4515C7293200260FDF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				31FF7A4615C7293200260FDF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		31FF7A4B15C7293200260FDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		31FF7A4C15C7293200260FDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		31FF7A4E15C7293200260FDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/ObserverSet.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ObserverSet/ObserverSet-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		31FF7A4F15C7293200260FDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/ObserverSet.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ObserverSet/ObserverSet-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		31FF7A5115C7293200260FDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ObserverSet/ObserverSet-Prefix.pch";
+				INFOPLIST_FILE = "ObserverSetTests/ObserverSetTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		31FF7A5215C7293200260FDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ObserverSet/ObserverSet-Prefix.pch";
+				INFOPLIST_FILE = "ObserverSetTests/ObserverSetTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		31FF7A2215C7293100260FDF /* Build configuration list for PBXProject "ObserverSet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31FF7A4B15C7293200260FDF /* Debug */,
+				31FF7A4C15C7293200260FDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		31FF7A4D15C7293200260FDF /* Build configuration list for PBXNativeTarget "ObserverSet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31FF7A4E15C7293200260FDF /* Debug */,
+				31FF7A4F15C7293200260FDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		31FF7A5015C7293200260FDF /* Build configuration list for PBXNativeTarget "ObserverSetTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31FF7A5115C7293200260FDF /* Debug */,
+				31FF7A5215C7293200260FDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 31FF7A1F15C7293100260FDF /* Project object */;
+}
