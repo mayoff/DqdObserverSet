@@ -151,9 +151,9 @@ static NSMutableSet *nonRetainingSet(void) {
         return proxyClass;
 
     proxyClass = objc_allocateClassPair(self, proxyClassName.UTF8String, 0);
+    objc_registerClassPair(proxyClass);
     [proxyClass copyMethodsForProtocol:protocol fromTemplateClass:[ObserverSetMessageProxyRequiredMessagesTemplate class]];
     [proxyClass copyMethodsForProtocol:protocol fromTemplateClass:[ObserverSetMessageProxyOptionalMessagesTemplate class]];
-    objc_registerClassPair(proxyClass);
     return proxyClass;
 }
 
