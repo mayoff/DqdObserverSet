@@ -5,9 +5,30 @@ Copyright (c) 2012 Rob Mayoff. All rights reserved.
 
 #import "ObserverSet.h"
 #import <objc/runtime.h>
+#import <objc/message.h>
+
+/*
+I dynamically create a subclass of ObserverSetMessageProxy for each protocol given to an ObserverSet.  In the dynamic subclass, I try to add an instance method for each message in the protocol.  I get the IMP for the method by looking through the instance methods of either ObserverSetMessageProxyRequiredMessagesTemplate or ObserverSetMessageProxyOptionalMessagesTemplate for a method whose signature matches the protocol message.  If I can't find an IMP with a matching signature, I don't add a method to the dynamic class.  The message will instead be handled by ObserverSetMessageProxy's forwardInvocation: method.
+*/
 
 @interface ObserverSetMessageProxy : NSObject
+
 @property (nonatomic, unsafe_unretained) ObserverSet *observerSet;
+
++ (Class)subclassForProtocol:(Protocol *)protocol;
+
++ (CFDictionaryRef)copyMethodDictionary;
+
+@end
+
+@interface ObserverSetMessageProxyRequiredMessagesTemplate : ObserverSetMessageProxy
++ (BOOL)requiredMessages;
++ (IMP)methodImplementationForTypes:(const char *)types;
+@end
+
+@interface ObserverSetMessageProxyOptionalMessagesTemplate: ObserverSetMessageProxy
++ (BOOL)requiredMessages;
++ (IMP)methodImplementationForTypes:(const char *)types;
 @end
 
 static NSMutableSet *nonRetainingSet(void) {
@@ -57,7 +78,7 @@ static NSMutableSet *nonRetainingSet(void) {
 
 - (id)proxy {
     if (!_proxy_cached) {
-        _proxy_cached = [[ObserverSetMessageProxy alloc] init];
+        _proxy_cached = [[[ObserverSetMessageProxy subclassForProtocol:_protocol] alloc] init];
         _proxy_cached.observerSet = self;
     }
     return _proxy_cached;
@@ -75,17 +96,16 @@ static NSMutableSet *nonRetainingSet(void) {
     return [NSMethodSignature signatureWithObjCTypes:description.types];
 }
 
-- (void)forwardInvocationToObservers:(NSInvocation *)invocation {
+- (void)forwardMessageToObserversThatRespondToSelector:(SEL)selector withBlock:(void (^)(id observer))block {
     NSAssert(!isForwarding_, @"%@ asked to forward a message to observers recursively", self);
 
     isForwarding_ = YES;
     @try {
-        SEL selector = invocation.selector;
         for (id observer in observers_) {
             if (pendingDeletions_ && [pendingDeletions_ containsObject:observer])
                 continue;
-            if ([observer respondsToSelector:selector]) {
-                [invocation invokeWithTarget:observer];
+            if (!selector || [observer respondsToSelector:selector]) {
+                block(observer);
             }
         }
     }
@@ -110,13 +130,181 @@ static NSMutableSet *nonRetainingSet(void) {
 
 @synthesize observerSet = _observerSet;
 
+#pragma mark - Message forwarding
+
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
     return [self.observerSet protocolMethodSignatureForSelector:aSelector];
 }
 
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
-    [self.observerSet forwardInvocationToObservers:anInvocation];
+    [self.observerSet forwardMessageToObserversThatRespondToSelector:anInvocation.selector withBlock:^(id observer) {
+        [anInvocation invokeWithTarget:observer];
+    }];
+}
+
+#pragma mark - Dynamic subclass creation
+
++ (Class)subclassForProtocol:(Protocol *)protocol {
+    NSString *proxyClassName = [self proxyClassNameForProtocol:protocol];
+    Class proxyClass = objc_lookUpClass(proxyClassName.UTF8String);
+    if (proxyClass)
+        return proxyClass;
+
+    proxyClass = objc_allocateClassPair(self, proxyClassName.UTF8String, 0);
+    [proxyClass copyMethodsForProtocol:protocol fromTemplateClass:[ObserverSetMessageProxyRequiredMessagesTemplate class]];
+    [proxyClass copyMethodsForProtocol:protocol fromTemplateClass:[ObserverSetMessageProxyOptionalMessagesTemplate class]];
+    objc_registerClassPair(proxyClass);
+    return proxyClass;
+}
+
++ (NSString *)proxyClassNameForProtocol:(Protocol *)protocol {
+    return [NSString stringWithFormat:@"%s-%s", class_getName(self.class), protocol_getName(protocol)];
+}
+
++ (void)copyMethodsForProtocol:(Protocol *)protocol fromTemplateClass:(Class)templateClass {
+    unsigned int count;
+    struct objc_method_description *descriptions = protocol_copyMethodDescriptionList(protocol, [templateClass requiredMessages], YES, &count);
+    for (unsigned int i = 0; i < count; ++i) {
+        [self copyMethodFromTemplateClass:templateClass forMessage:descriptions + i];
+    }
+    free(descriptions);
+}
+
++ (void)copyMethodFromTemplateClass:(Class)templateClass forMessage:(struct objc_method_description *)description {
+    IMP imp = [templateClass methodImplementationForTypes:description->types];
+    if (imp) {
+        class_addMethod(self, description->name, imp, description->types);
+    }
+}
+
+#pragma mark - Method dictionary
+
+static CFStringRef methodDictionaryCopyKeyDescription(const void *key) {
+    return CFStringCreateWithCString(NULL, key, kCFStringEncodingUTF8);
+}
+
+static Boolean methodDictionaryKeyEqual(const void *key0, const void *key1) {
+    return strcmp(key0, key1) == 0;
+}
+
+static CFHashCode methodDictionaryKeyHash(const void *key) {
+    // djb hash function - xor variant
+    CFHashCode hash = 5381;
+    for (const unsigned char *p = key ; *p; ++p) {
+        hash = (hash * 33) ^ *p;
+    }
+    return hash;
+}
+
++ (CFDictionaryRef)copyMethodDictionary {
+    unsigned int count;
+    Method *methods = class_copyMethodList(self, &count);
+    
+    const void **keys = malloc(count * sizeof *keys);
+    const void **values = malloc(count * sizeof *values);
+    for (unsigned int i = 0; i < count; ++i) {
+        keys[i] = method_getTypeEncoding(methods[i]);
+        values[i] = method_getImplementation(methods[i]);
+    }
+
+    free(methods);
+
+    CFDictionaryKeyCallBacks keyCallbacks = {
+        .version = 0,
+        .retain = NULL,
+        .release = NULL,
+        .copyDescription  = methodDictionaryCopyKeyDescription,
+        .equal = methodDictionaryKeyEqual,
+        .hash = methodDictionaryKeyHash
+    };
+
+    return CFDictionaryCreate(NULL, keys, values, count, &keyCallbacks, NULL);
 }
 
 @end
 
+@implementation ObserverSetMessageProxyRequiredMessagesTemplate
+
++ (BOOL)requiredMessages {
+    return YES;
+}
+
++ (CFDictionaryRef)methodDictionary {
+    // This has to be in each template class because each template class needs its own dictionary.
+    static CFDictionaryRef dictionary;
+    static dispatch_once_t once;
+    dispatch_once(&once, ^{
+        dictionary = [self copyMethodDictionary];
+    });
+    return dictionary;
+}
+
++ (IMP)methodImplementationForTypes:(const char *)types {
+    return CFDictionaryGetValue([self methodDictionary], types);
+}
+
+- (void)message {
+    typedef void MethodType(id, SEL);
+    [self.observerSet forwardMessageToObserversThatRespondToSelector:NULL withBlock:^(id observer) {
+        ((MethodType *)objc_msgSend)(observer, _cmd);
+    }];
+}
+
+- (void)messageWithObject:(id)object0 {
+    typedef void MethodType(id, SEL, id);
+    [self.observerSet forwardMessageToObserversThatRespondToSelector:NULL withBlock:^(id observer) {
+        ((MethodType *)objc_msgSend)(observer, _cmd, object0);
+    }];
+}
+
+- (void)messageWithObject:(id)object0 object:(id)object1 {
+    typedef void MethodType(id, SEL, id, id);
+    [self.observerSet forwardMessageToObserversThatRespondToSelector:NULL withBlock:^(id observer) {
+        ((MethodType *)objc_msgSend)(observer, _cmd, object0, object1);
+    }];
+}
+
+@end
+
+@implementation ObserverSetMessageProxyOptionalMessagesTemplate
+
++ (BOOL)requiredMessages {
+    return NO;
+}
+
++ (CFDictionaryRef)methodDictionary {
+    // This has to be in each template class because each template class needs its own dictionary.
+    static CFDictionaryRef dictionary;
+    static dispatch_once_t once;
+    dispatch_once(&once, ^{
+        dictionary = [self copyMethodDictionary];
+    });
+    return dictionary;
+}
+
++ (IMP)methodImplementationForTypes:(const char *)types {
+    return CFDictionaryGetValue([self methodDictionary], types);
+}
+
+- (void)message {
+    typedef void MethodType(id, SEL);
+    [self.observerSet forwardMessageToObserversThatRespondToSelector:_cmd withBlock:^(id observer) {
+        ((MethodType *)objc_msgSend)(observer, _cmd);
+    }];
+}
+
+- (void)messageWithObject:(id)object0 {
+    typedef void MethodType(id, SEL, id);
+    [self.observerSet forwardMessageToObserversThatRespondToSelector:_cmd withBlock:^(id observer) {
+        ((MethodType *)objc_msgSend)(observer, _cmd, object0);
+    }];
+}
+
+- (void)messageWithObject:(id)object0 object:(id)object1 {
+    typedef void MethodType(id, SEL, id, id);
+    [self.observerSet forwardMessageToObserversThatRespondToSelector:_cmd withBlock:^(id observer) {
+        ((MethodType *)objc_msgSend)(observer, _cmd, object0, object1);
+    }];
+}
+
+@end
