@@ -12,7 +12,8 @@ You use me when you want to manage a set of observers and send messages to all o
 
 To avoid retain cycles, I don't retain the observers.  I assume that observers retain you, and you retain me.
 
-Before you can send a message to the observers, you need to tell me the protocol that defines the messages you want to send.  For example, suppose you have this observer protocol:
+Before you can send a message to the observers, you need to tell me the protocol that defines the messages you want to send.
+For example, suppose you have this observer protocol:
 
     @class Model;
     @protocol ModelObserver
@@ -43,7 +44,7 @@ The proxy will only forward the optional message to those observers that respond
 
 The proxy can forward messages with any signature, so you for example can also send a message with only one argument:
 
-    [observers.optionalMessageProxy modelDidTick:self];
+    [observers.proxy modelDidTick:self];
 
 */
 
