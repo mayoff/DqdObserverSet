@@ -31,19 +31,20 @@ You tell me to use this protocol by setting my `protocol` property:
     ObserverSet *observers = ...;
     observers.protocol = @protocol(MyObserverProtocol);
     
-After you've set my `protocol`, you can send messages to the observers.  If you want to send a required message, use my `requiredMessageProxy`:
+After you've set my `protocol`, you can send messages to the observers.  Just send the message to my `proxy` object:
 
-    [observers.requiredMessageProxy model:self didChangeImportantObject:someObject];
+    [observers.proxy model:self didChangeImportantObject:someObject];
 
-If you want to send an option message, use my `optionalMessageProxy`:
+You can send an optional message the same way:
 
-    [observers.optionalMessageProxy model:self didChangeTrivialDetail:someObject];
+    [observers.proxy model:self didChangeTrivialDetail:someObject];
 
-If you use the wrong proxy, the behavior is undefined.
+The proxy will only forward the optional message to those observers that respond to the message selector.
 
-The proxies can forward messages with any signature, so you can also send this message:
+The proxy can forward messages with any signature, so you for example can also send a message with only one argument:
 
     [observers.optionalMessageProxy modelDidTick:self];
+
 */
 
 @interface ObserverSet : NSObject
@@ -68,13 +69,8 @@ The protocol adopted by the observers I manage.
 @property (nonatomic, strong) Protocol *protocol;
 
 /**
-An object that forwards messages to my observers.  You must only send messages to this proxy if they are required messages in my assigned protocol.
+An object that forwards messages to my observers.  If you send it an optional message, it only forwards the message to those observers that respond to the message selector.
 */
-@property (nonatomic, strong) id requiredMessageProxy;
-
-/**
-An object that forwards messages to my observers.  It only forwards a message to an observer if the observer responds to the message selector.  You must only send messages to this proxy if they are optional messages in my assigned protocol.
-*/
-@property (nonatomic, strong) id optionalMessageProxy;
+@property (nonatomic, strong) id proxy;
 
 @end

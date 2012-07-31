@@ -48,7 +48,7 @@ Copyright (c) 2012 Rob Mayoff. All rights reserved.
 
     [observerSet_ addObserver:observer0_];
     [observerSet_ addObserver:observer1_];
-    [observerSet_.requiredMessageProxy message];
+    [observerSet_.proxy message];
 
     STAssertTrue(observer0_.receivedMessage ^ observer1_.receivedMessage, @"only one of the observers received the message");
 }
@@ -60,7 +60,7 @@ Copyright (c) 2012 Rob Mayoff. All rights reserved.
     };
 
     [observerSet_ addObserver:observer0_];
-    [observerSet_.requiredMessageProxy message];
+    [observerSet_.proxy message];
 
     STAssertTrue(observer0_.receivedMessage, @"observer0 received the message");
     STAssertFalse(observer1_.receivedMessage, @"observer1 didn't receive the message");

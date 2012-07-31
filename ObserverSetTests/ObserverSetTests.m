@@ -88,7 +88,7 @@ Copyright (c) 2012 Rob Mayoff. All rights reserved.
 - (void)testObserverSetSendsRequiredMessageToAllObservers {
     [self addRequiredMessagesObserver];
     [self addRequiredMessagesObserver];
-    [observerSet_.requiredMessageProxy requiredMessageWithNoArguments];
+    [observerSet_.proxy requiredMessageWithNoArguments];
     [self verifyObserversReceivedMessageWithSelector:@selector(requiredMessageWithNoArguments) arguments:@[]];
 }
 
@@ -98,27 +98,27 @@ Copyright (c) 2012 Rob Mayoff. All rights reserved.
     TestObserver *removedObserver = [observers_ lastObject];
     [observers_ removeLastObject];
     [observerSet_ removeObserver:removedObserver];
-    [observerSet_.requiredMessageProxy requiredMessageWithNoArguments];
+    [observerSet_.proxy requiredMessageWithNoArguments];
     STAssertTrue([removedObserver receivedNoMessages], @"removed observer received no messages");
 }
 
 - (void)testObserverSetSendsOptionalMessageToImplementingObservers {
     [self addRequiredMessagesObserver];
     [self addOptionalMessagesObserver];
-    [observerSet_.optionalMessageProxy optionalMessageWithNoArguments];
+    [observerSet_.proxy optionalMessageWithNoArguments];
     [self verifyObserversReceivedOptionalMessageIfImplementedWithSelector:@selector(optionalMessageWithNoArguments) arguments:@[]];
 }
 
 - (void)testObserverSetSendsRequiredMessageWithNoArguments {
     [self addRequiredMessagesObserver];
-    [observerSet_.requiredMessageProxy requiredMessageWithNoArguments];
+    [observerSet_.proxy requiredMessageWithNoArguments];
     [self verifyObserversReceivedMessageWithSelector:@selector(requiredMessageWithNoArguments) arguments:@[]];
 }
 
 - (void)testObserverSetSendsRequiredMessageWithOneArgument {
     [self addRequiredMessagesObserver];
     id argument = @"hello";
-    [observerSet_.requiredMessageProxy requiredMessageWithObject:argument];
+    [observerSet_.proxy requiredMessageWithObject:argument];
     [self verifyObserversReceivedMessageWithSelector:@selector(requiredMessageWithObject:) arguments:@[argument]];
 }
 
@@ -126,20 +126,20 @@ Copyright (c) 2012 Rob Mayoff. All rights reserved.
     [self addRequiredMessagesObserver];
     id argument0 = @"hello";
     id argument1 = @"world";
-    [observerSet_.requiredMessageProxy requiredMessageWithObject:argument0 object:argument1];
+    [observerSet_.proxy requiredMessageWithObject:argument0 object:argument1];
     [self verifyObserversReceivedMessageWithSelector:@selector(requiredMessageWithObject:object:) arguments:@[argument0, argument1]];
 }
 
 - (void)testObserverSetSendsOptionalMessageWithNoArguments {
     [self addOptionalMessagesObserver];
-    [observerSet_.optionalMessageProxy optionalMessageWithNoArguments];
+    [observerSet_.proxy optionalMessageWithNoArguments];
     [self verifyObserversReceivedMessageWithSelector:@selector(optionalMessageWithNoArguments) arguments:@[]];
 }
 
 - (void)testObserverSetSendsOptionalMessageWithOneArgument {
     [self addOptionalMessagesObserver];
     id argument = @"hello";
-    [observerSet_.optionalMessageProxy optionalMessageWithObject:argument];
+    [observerSet_.proxy optionalMessageWithObject:argument];
     [self verifyObserversReceivedMessageWithSelector:@selector(optionalMessageWithObject:) arguments:@[argument]];
 }
 
@@ -147,7 +147,7 @@ Copyright (c) 2012 Rob Mayoff. All rights reserved.
     [self addOptionalMessagesObserver];
     id argument0 = @"hello";
     id argument1 = @"world";
-    [observerSet_.optionalMessageProxy optionalMessageWithObject:argument0 object:argument1];
+    [observerSet_.proxy optionalMessageWithObject:argument0 object:argument1];
     [self verifyObserversReceivedMessageWithSelector:@selector(optionalMessageWithObject:object:) arguments:@[argument0, argument1]];
 }
 

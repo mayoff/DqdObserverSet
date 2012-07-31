@@ -10,12 +10,6 @@ Copyright (c) 2012 Rob Mayoff. All rights reserved.
 @property (nonatomic, unsafe_unretained) ObserverSet *observerSet;
 @end
 
-@interface ObserverSetOptionalMessageProxy : ObserverSetMessageProxy
-@end
-
-@interface ObserverSetRequiredMessageProxy : ObserverSetMessageProxy
-@end
-
 static NSMutableSet *nonRetainingSet(void) {
     CFSetCallBacks callbacks = {
         .version = 0,
@@ -33,10 +27,11 @@ static NSMutableSet *nonRetainingSet(void) {
     NSMutableSet *observers_;
     NSMutableSet *pendingAdditions_;
     NSMutableSet *pendingDeletions_;
-    ObserverSetMessageProxy *_requiredMessageProxy_cached;
-    ObserverSetMessageProxy *_optionalMessageProxy_cached;
+    ObserverSetMessageProxy *_proxy_cached;
     BOOL isForwarding_;
 }
+
+@dynamic proxy;
 
 #pragma mark - Public API
 
@@ -60,28 +55,23 @@ static NSMutableSet *nonRetainingSet(void) {
     }
 }
 
-- (id)requiredMessageProxy {
-    if (!_requiredMessageProxy_cached) {
-        _requiredMessageProxy_cached = [[ObserverSetRequiredMessageProxy alloc] init];
-        _requiredMessageProxy_cached.observerSet = self;
+- (id)proxy {
+    if (!_proxy_cached) {
+        _proxy_cached = [[ObserverSetMessageProxy alloc] init];
+        _proxy_cached.observerSet = self;
     }
-    return _requiredMessageProxy_cached;
-}
-
-- (id)optionalMessageProxy {
-    if (!_optionalMessageProxy_cached) {
-        _optionalMessageProxy_cached = [[ObserverSetOptionalMessageProxy alloc] init];
-        _optionalMessageProxy_cached.observerSet = self;
-    }
-    return _optionalMessageProxy_cached;
+    return _proxy_cached;
 }
 
 #pragma mark - ObserverSetMessageProxy API
 
-- (NSMethodSignature *)protocolMethodSignatureForSelector:(SEL)selector requiredMessage:(BOOL)requiredMessage {
+- (NSMethodSignature *)protocolMethodSignatureForSelector:(SEL)selector {
     NSAssert(_protocol != nil, @"%@ protocol not set", self);
-    struct objc_method_description description = protocol_getMethodDescription(_protocol, selector, requiredMessage, YES);
-    NSAssert(description.name, @"%@ couldn't find required selector %s in protocol %s", self, sel_getName(selector), protocol_getName(_protocol));
+    struct objc_method_description description = protocol_getMethodDescription(_protocol, selector, YES, YES);
+    if (!description.name) {
+        description = protocol_getMethodDescription(_protocol, selector, NO, YES);
+    }
+    NSAssert(description.name, @"%@ couldn't find selector %s in protocol %s", self, sel_getName(selector), protocol_getName(_protocol));
     return [NSMethodSignature signatureWithObjCTypes:description.types];
 }
 
@@ -117,25 +107,11 @@ static NSMutableSet *nonRetainingSet(void) {
 @end
 
 @implementation ObserverSetMessageProxy
+
 @synthesize observerSet = _observerSet;
-@end
-
-@implementation ObserverSetRequiredMessageProxy
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
-    return [self.observerSet protocolMethodSignatureForSelector:aSelector requiredMessage:YES];
-}
-
-- (void)forwardInvocation:(NSInvocation *)anInvocation {
-    [self.observerSet forwardInvocationToObservers:anInvocation];
-}
-
-@end
-
-@implementation ObserverSetOptionalMessageProxy
-
-- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
-    return [self.observerSet protocolMethodSignatureForSelector:aSelector requiredMessage:NO];
+    return [self.observerSet protocolMethodSignatureForSelector:aSelector];
 }
 
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
