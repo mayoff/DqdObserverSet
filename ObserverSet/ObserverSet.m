@@ -44,6 +44,8 @@ static NSMutableSet *nonRetainingSet(void) {
     return CFBridgingRelease(CFSetCreateMutable(NULL, 0, &callbacks));
 }
 
+static const SEL kRequiredSelectorPlaceholder = (SEL)NULL;
+
 @implementation ObserverSet {
     NSMutableSet *observers_;
     NSMutableSet *pendingAdditions_;
@@ -104,7 +106,7 @@ static NSMutableSet *nonRetainingSet(void) {
         for (id observer in observers_) {
             if (pendingDeletions_ && [pendingDeletions_ containsObject:observer])
                 continue;
-            if (!selector || [observer respondsToSelector:selector]) {
+            if (selector == kRequiredSelectorPlaceholder || [observer respondsToSelector:selector]) {
                 block(observer);
             }
         }
@@ -245,21 +247,21 @@ static CFHashCode methodDictionaryKeyHash(const void *key) {
 
 - (void)message {
     typedef void MethodType(id, SEL);
-    [self.observerSet forwardMessageToObserversThatRespondToSelector:NULL withBlock:^(id observer) {
+    [self.observerSet forwardMessageToObserversThatRespondToSelector:kRequiredSelectorPlaceholder withBlock:^(id observer) {
         ((MethodType *)objc_msgSend)(observer, _cmd);
     }];
 }
 
 - (void)messageWithObject:(id)object0 {
     typedef void MethodType(id, SEL, id);
-    [self.observerSet forwardMessageToObserversThatRespondToSelector:NULL withBlock:^(id observer) {
+    [self.observerSet forwardMessageToObserversThatRespondToSelector:kRequiredSelectorPlaceholder withBlock:^(id observer) {
         ((MethodType *)objc_msgSend)(observer, _cmd, object0);
     }];
 }
 
 - (void)messageWithObject:(id)object0 object:(id)object1 {
     typedef void MethodType(id, SEL, id, id);
-    [self.observerSet forwardMessageToObserversThatRespondToSelector:NULL withBlock:^(id observer) {
+    [self.observerSet forwardMessageToObserversThatRespondToSelector:kRequiredSelectorPlaceholder withBlock:^(id observer) {
         ((MethodType *)objc_msgSend)(observer, _cmd, object0, object1);
     }];
 }
