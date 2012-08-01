@@ -13,6 +13,11 @@
 		3121665915C87D8300A1570B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3121665715C87D8300A1570B /* InfoPlist.strings */; };
 		3121665B15C87D8300A1570B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3121665A15C87D8300A1570B /* main.m */; };
 		3121666415C87D9000A1570B /* libObserverSet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FF7A2815C7293100260FDF /* libObserverSet.a */; };
+		31C3262015C9A2DB00DF55B8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C3261F15C9A2DB00DF55B8 /* ViewController.m */; };
+		31C3262415C9A41100DF55B8 /* PerformanceTestObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C3262315C9A41100DF55B8 /* PerformanceTestObserver.m */; };
+		31C3262715C9A49900DF55B8 /* PerformanceTestObserverWithOptionalMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C3262615C9A49900DF55B8 /* PerformanceTestObserverWithOptionalMessages.m */; };
+		31D216E115C9A11800CE6EFC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D216E015C9A11800CE6EFC /* AppDelegate.m */; };
+		31D216E715C9A17800CE6EFC /* MainInterface.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D216E615C9A17800CE6EFC /* MainInterface.xib */; };
 		31FF7A2C15C7293100260FDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FF7A2B15C7293100260FDF /* Foundation.framework */; };
 		31FF7A3115C7293100260FDF /* ObserverSet.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 31FF7A3015C7293100260FDF /* ObserverSet.h */; };
 		31FF7A3315C7293100260FDF /* ObserverSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF7A3215C7293100260FDF /* ObserverSet.m */; };
@@ -55,6 +60,16 @@
 		3121665815C87D8300A1570B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3121665A15C87D8300A1570B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3121665C15C87D8300A1570B /* ObserverSetPerformanceTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObserverSetPerformanceTest-Prefix.pch"; sourceTree = "<group>"; };
+		31C3261E15C9A2DB00DF55B8 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		31C3261F15C9A2DB00DF55B8 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		31C3262115C9A3EB00DF55B8 /* PerformanceTestProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PerformanceTestProtocol.h; sourceTree = "<group>"; };
+		31C3262215C9A41100DF55B8 /* PerformanceTestObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerformanceTestObserver.h; sourceTree = "<group>"; };
+		31C3262315C9A41100DF55B8 /* PerformanceTestObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerformanceTestObserver.m; sourceTree = "<group>"; };
+		31C3262515C9A49900DF55B8 /* PerformanceTestObserverWithOptionalMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerformanceTestObserverWithOptionalMessages.h; sourceTree = "<group>"; };
+		31C3262615C9A49900DF55B8 /* PerformanceTestObserverWithOptionalMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerformanceTestObserverWithOptionalMessages.m; sourceTree = "<group>"; };
+		31D216DF15C9A11800CE6EFC /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		31D216E015C9A11800CE6EFC /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		31D216E615C9A17800CE6EFC /* MainInterface.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainInterface.xib; sourceTree = "<group>"; };
 		31FF7A2815C7293100260FDF /* libObserverSet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libObserverSet.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		31FF7A2B15C7293100260FDF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		31FF7A2F15C7293100260FDF /* ObserverSet-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObserverSet-Prefix.pch"; sourceTree = "<group>"; };
@@ -108,7 +123,16 @@
 		3121665415C87D8300A1570B /* ObserverSetPerformanceTest */ = {
 			isa = PBXGroup;
 			children = (
-				3121665A15C87D8300A1570B /* main.m */,
+				31D216E615C9A17800CE6EFC /* MainInterface.xib */,
+				31D216DF15C9A11800CE6EFC /* AppDelegate.h */,
+				31D216E015C9A11800CE6EFC /* AppDelegate.m */,
+				31C3261E15C9A2DB00DF55B8 /* ViewController.h */,
+				31C3261F15C9A2DB00DF55B8 /* ViewController.m */,
+				31C3262115C9A3EB00DF55B8 /* PerformanceTestProtocol.h */,
+				31C3262215C9A41100DF55B8 /* PerformanceTestObserver.h */,
+				31C3262315C9A41100DF55B8 /* PerformanceTestObserver.m */,
+				31C3262515C9A49900DF55B8 /* PerformanceTestObserverWithOptionalMessages.h */,
+				31C3262615C9A49900DF55B8 /* PerformanceTestObserverWithOptionalMessages.m */,
 				3121665515C87D8300A1570B /* Supporting Files */,
 			);
 			path = ObserverSetPerformanceTest;
@@ -117,6 +141,7 @@
 		3121665515C87D8300A1570B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3121665A15C87D8300A1570B /* main.m */,
 				3121665615C87D8300A1570B /* ObserverSetPerformanceTest-Info.plist */,
 				3121665715C87D8300A1570B /* InfoPlist.strings */,
 				3121665C15C87D8300A1570B /* ObserverSetPerformanceTest-Prefix.pch */,
@@ -285,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3121665915C87D8300A1570B /* InfoPlist.strings in Resources */,
+				31D216E715C9A17800CE6EFC /* MainInterface.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +346,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3121665B15C87D8300A1570B /* main.m in Sources */,
+				31D216E115C9A11800CE6EFC /* AppDelegate.m in Sources */,
+				31C3262015C9A2DB00DF55B8 /* ViewController.m in Sources */,
+				31C3262415C9A41100DF55B8 /* PerformanceTestObserver.m in Sources */,
+				31C3262715C9A49900DF55B8 /* PerformanceTestObserverWithOptionalMessages.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
