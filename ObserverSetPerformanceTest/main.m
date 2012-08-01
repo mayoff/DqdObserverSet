@@ -4,58 +4,8 @@ Copyright (c) 2012 Rob Mayoff. All rights reserved.
 */
 
 #import <UIKit/UIKit.h>
-#import <ObserverSet/ObserverSet.h>
-#import <sys/time.h>
 
-@protocol PerformanceTestProtocol <NSObject>
-
-- (void)requiredMessage0WithObject:(id)object0 object:(id)object1;
-- (void)requiredMessage1WithObject:(id)object0 object:(id)object1;
-- (void)requiredMessage2WithObject:(id)object0 object:(id)object1;
-- (void)requiredMessage3WithObject:(id)object0 object:(id)object1;
-- (void)requiredMessage4WithObject:(id)object0 object:(id)object1;
-
-@optional
-
-- (void)optionalMessage0WithObject:(id)object0 object:(id)object1;
-- (void)optionalMessage1WithObject:(id)object0 object:(id)object1;
-- (void)optionalMessage2WithObject:(id)object0 object:(id)object1;
-- (void)optionalMessage3WithObject:(id)object0 object:(id)object1;
-- (void)optionalMessage4WithObject:(id)object0 object:(id)object1;
-
-@end
-
-@interface PerformanceTestObserver : NSObject <PerformanceTestProtocol>
-@end
-
-@interface PerformanceTestObserverWithOptionalMessages : PerformanceTestObserver
-@end
-
-static volatile sig_atomic_t profileAlarmExpired;
-
-static void signalHandler(int signalNumber) {
-    profileAlarmExpired = 1;
-}
-
-static void setProfileAlarm(NSTimeInterval duration) {
-    struct sigaction sa;
-    memset(&sa, 0, sizeof sa);
-    sa.sa_handler = signalHandler;
-    sigaction(SIGALRM, &sa, NULL);
-    sigaction(SIGVTALRM, &sa, NULL);
-    sigaction(SIGPROF, &sa, NULL);
-
-    struct itimerval itimer = {
-        .it_interval = { 0 },
-        .it_value = (struct timeval){
-            .tv_sec = (long)duration,
-            .tv_usec = (long)(duration / 1000000)
-        }
-    };
-    profileAlarmExpired = 0;
-    setitimer(ITIMER_REAL, &itimer, NULL);
-}
-
+#if 0
 static void perform(NSString *label, dispatch_block_t block) {
     NSUInteger executionCount = 0;
     setProfileAlarm(5);
@@ -128,10 +78,14 @@ static void testSendOptionalMessageWithRespondingObservers(NSUInteger observerCo
         });
     }
 }
+#endif
 
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
+        return UIApplicationMain(argc, argv, nil, nil);
+
+#if 0
         testCreateAndSendWithNoObservers();
         
         testSendRequiredMessageWithObservers(1);
@@ -156,26 +110,7 @@ int main(int argc, char *argv[])
         testSendOptionalMessageWithRespondingObservers(10);
 
         return 0;
+#endif
     }
 }
-
-@implementation PerformanceTestObserver
-
-- (void)requiredMessage0WithObject:(id)object0 object:(id)object1 { }
-- (void)requiredMessage1WithObject:(id)object0 object:(id)object1 { }
-- (void)requiredMessage2WithObject:(id)object0 object:(id)object1 { }
-- (void)requiredMessage3WithObject:(id)object0 object:(id)object1 { }
-- (void)requiredMessage4WithObject:(id)object0 object:(id)object1 { }
-
-@end
-
-@implementation PerformanceTestObserverWithOptionalMessages
-
-- (void)optionalMessage0WithObject:(id)object0 object:(id)object1 { }
-- (void)optionalMessage1WithObject:(id)object0 object:(id)object1 { }
-- (void)optionalMessage2WithObject:(id)object0 object:(id)object1 { }
-- (void)optionalMessage3WithObject:(id)object0 object:(id)object1 { }
-- (void)optionalMessage4WithObject:(id)object0 object:(id)object1 { }
-
-@end
 
