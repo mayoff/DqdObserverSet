@@ -31,6 +31,10 @@ I dynamically create a subclass of ObserverSetMessageProxy for each protocol giv
 + (IMP)methodImplementationForTypes:(const char *)types;
 @end
 
+/*
+Since I don't want to retain the observers, I pass non-retaining callbacks to `CFSetCreateMutable` and then use toll-free-bridging to treat the result as an `NSMutableSet`.
+*/
+
 static NSMutableSet *nonRetainingSet(void) {
     CFSetCallBacks callbacks = {
         .version = 0,
@@ -43,6 +47,10 @@ static NSMutableSet *nonRetainingSet(void) {
     };
     return CFBridgingRelease(CFSetCreateMutable(NULL, 0, &callbacks));
 }
+
+/*
+I use this instead of a selector to indicate that I need not bother testing the observer with `respondsToSelector:` before sending it a message.
+*/
 
 static const SEL kRequiredSelectorPlaceholder = (SEL)NULL;
 
