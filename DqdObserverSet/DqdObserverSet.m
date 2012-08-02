@@ -3,7 +3,7 @@ Created by Rob Mayoff on 7/30/12.
 Copyright (c) 2012 Rob Mayoff. All rights reserved.
 */
 
-#import "ObserverSet.h"
+#import "DqdObserverSet.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 
@@ -11,9 +11,9 @@ Copyright (c) 2012 Rob Mayoff. All rights reserved.
 I dynamically create a subclass of ObserverSetMessageProxy for each protocol given to an ObserverSet.  In the dynamic subclass, I try to add an instance method for each message in the protocol.  I get the IMP for the method by looking through the instance methods of either ObserverSetMessageProxyRequiredMessagesTemplate or ObserverSetMessageProxyOptionalMessagesTemplate for a method whose signature matches the protocol message.  If I can't find an IMP with a matching signature, I don't add a method to the dynamic class.  The message will instead be handled by ObserverSetMessageProxy's forwardInvocation: method.
 */
 
-@interface ObserverSetMessageProxy : NSObject
+@interface DqdObserverSetMessageProxy : NSObject
 
-@property (nonatomic, unsafe_unretained) ObserverSet *observerSet;
+@property (nonatomic, unsafe_unretained) DqdObserverSet *observerSet;
 
 + (Class)subclassForProtocol:(Protocol *)protocol;
 
@@ -21,12 +21,12 @@ I dynamically create a subclass of ObserverSetMessageProxy for each protocol giv
 
 @end
 
-@interface ObserverSetMessageProxyRequiredMessagesTemplate : ObserverSetMessageProxy
+@interface DqdObserverSetMessageProxyRequiredMessagesTemplate : DqdObserverSetMessageProxy
 + (BOOL)requiredMessages;
 + (IMP)methodImplementationForTypes:(const char *)types;
 @end
 
-@interface ObserverSetMessageProxyOptionalMessagesTemplate: ObserverSetMessageProxy
+@interface DqdObserverSetMessageProxyOptionalMessagesTemplate: DqdObserverSetMessageProxy
 + (BOOL)requiredMessages;
 + (IMP)methodImplementationForTypes:(const char *)types;
 @end
@@ -46,11 +46,11 @@ static NSMutableSet *nonRetainingSet(void) {
 
 static const SEL kRequiredSelectorPlaceholder = (SEL)NULL;
 
-@implementation ObserverSet {
+@implementation DqdObserverSet {
     NSMutableSet *observers_;
     NSMutableSet *pendingAdditions_;
     NSMutableSet *pendingDeletions_;
-    ObserverSetMessageProxy *_proxy_cached;
+    DqdObserverSetMessageProxy *_proxy_cached;
     BOOL isForwarding_;
 }
 
@@ -80,13 +80,13 @@ static const SEL kRequiredSelectorPlaceholder = (SEL)NULL;
 
 - (id)proxy {
     if (!_proxy_cached) {
-        _proxy_cached = [[[ObserverSetMessageProxy subclassForProtocol:_protocol] alloc] init];
+        _proxy_cached = [[[DqdObserverSetMessageProxy subclassForProtocol:_protocol] alloc] init];
         _proxy_cached.observerSet = self;
     }
     return _proxy_cached;
 }
 
-#pragma mark - ObserverSetMessageProxy API
+#pragma mark - DqdObserverSetMessageProxy API
 
 - (NSMethodSignature *)protocolMethodSignatureForSelector:(SEL)selector {
     NSAssert(_protocol != nil, @"%@ protocol not set", self);
@@ -128,7 +128,7 @@ static const SEL kRequiredSelectorPlaceholder = (SEL)NULL;
 
 @end
 
-@implementation ObserverSetMessageProxy
+@implementation DqdObserverSetMessageProxy
 
 @synthesize observerSet = _observerSet;
 
@@ -154,8 +154,8 @@ static const SEL kRequiredSelectorPlaceholder = (SEL)NULL;
 
     proxyClass = objc_allocateClassPair(self, proxyClassName.UTF8String, 0);
     objc_registerClassPair(proxyClass);
-    [proxyClass copyMethodsForProtocol:protocol fromTemplateClass:[ObserverSetMessageProxyRequiredMessagesTemplate class]];
-    [proxyClass copyMethodsForProtocol:protocol fromTemplateClass:[ObserverSetMessageProxyOptionalMessagesTemplate class]];
+    [proxyClass copyMethodsForProtocol:protocol fromTemplateClass:[DqdObserverSetMessageProxyRequiredMessagesTemplate class]];
+    [proxyClass copyMethodsForProtocol:protocol fromTemplateClass:[DqdObserverSetMessageProxyOptionalMessagesTemplate class]];
     return proxyClass;
 }
 
@@ -225,7 +225,7 @@ static CFHashCode methodDictionaryKeyHash(const void *key) {
 
 @end
 
-@implementation ObserverSetMessageProxyRequiredMessagesTemplate
+@implementation DqdObserverSetMessageProxyRequiredMessagesTemplate
 
 + (BOOL)requiredMessages {
     return YES;
@@ -268,7 +268,7 @@ static CFHashCode methodDictionaryKeyHash(const void *key) {
 
 @end
 
-@implementation ObserverSetMessageProxyOptionalMessagesTemplate
+@implementation DqdObserverSetMessageProxyOptionalMessagesTemplate
 
 + (BOOL)requiredMessages {
     return NO;

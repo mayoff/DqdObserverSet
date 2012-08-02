@@ -3,8 +3,8 @@ Created by Rob Mayoff on 7/30/12.
 Copyright (c) 2012 Rob Mayoff. All rights reserved.
 */
 
-#import "ObserverSetReentrancyTests.h"
-#import "ObserverSet.h"
+#import "DqdObserverSetReentrancyTests.h"
+#import "DqdObserverSet.h"
 
 @protocol ReentrantTestProtocol
 - (void)message;
@@ -15,15 +15,15 @@ Copyright (c) 2012 Rob Mayoff. All rights reserved.
 @property (nonatomic, readonly) BOOL receivedMessage;
 @end
 
-@implementation ObserverSetReentrancyTests {
-    ObserverSet *observerSet_;
+@implementation DqdObserverSetReentrancyTests {
+    DqdObserverSet *observerSet_;
     ReentrantTestObserver *observer0_;
     ReentrantTestObserver *observer1_;
 }
 
 - (void)setUp {
     [super setUp];
-    observerSet_ = [[ObserverSet alloc] init];
+    observerSet_ = [[DqdObserverSet alloc] init];
     observerSet_.protocol = @protocol(ReentrantTestProtocol);
     observer0_ = [[ReentrantTestObserver alloc] init];
     observer1_ = [[ReentrantTestObserver alloc] init];
@@ -36,7 +36,7 @@ Copyright (c) 2012 Rob Mayoff. All rights reserved.
 }
 
 - (void)testObserverSetDoesNotSendMessageToObserverRemovedWhileInCallback {
-    __unsafe_unretained ObserverSetReentrancyTests *me = self;
+    __unsafe_unretained DqdObserverSetReentrancyTests *me = self;
     
     observer0_.block = ^{
         [me->observerSet_ removeObserver:me->observer1_];
@@ -54,7 +54,7 @@ Copyright (c) 2012 Rob Mayoff. All rights reserved.
 }
 
 - (void)testObserverSetDoesNotSendMessageToObserverAddingWhileInCallback {
-    __unsafe_unretained ObserverSetReentrancyTests *me = self;
+    __unsafe_unretained DqdObserverSetReentrancyTests *me = self;
     observer0_.block = ^{
         [me->observerSet_ addObserver:me->observer1_];
     };

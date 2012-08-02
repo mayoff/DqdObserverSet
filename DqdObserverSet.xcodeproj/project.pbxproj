@@ -12,22 +12,22 @@
 		3121665315C87D8300A1570B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3121665215C87D8300A1570B /* CoreGraphics.framework */; };
 		3121665915C87D8300A1570B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3121665715C87D8300A1570B /* InfoPlist.strings */; };
 		3121665B15C87D8300A1570B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3121665A15C87D8300A1570B /* main.m */; };
-		3121666415C87D9000A1570B /* libObserverSet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FF7A2815C7293100260FDF /* libObserverSet.a */; };
+		3121666415C87D9000A1570B /* libDqdObserverSet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FF7A2815C7293100260FDF /* libDqdObserverSet.a */; };
 		31C3262015C9A2DB00DF55B8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C3261F15C9A2DB00DF55B8 /* ViewController.m */; };
 		31C3262415C9A41100DF55B8 /* PerformanceTestObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C3262315C9A41100DF55B8 /* PerformanceTestObserver.m */; };
 		31C3262715C9A49900DF55B8 /* PerformanceTestObserverWithOptionalMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C3262615C9A49900DF55B8 /* PerformanceTestObserverWithOptionalMessages.m */; };
 		31D216E115C9A11800CE6EFC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D216E015C9A11800CE6EFC /* AppDelegate.m */; };
 		31D216E715C9A17800CE6EFC /* MainInterface.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D216E615C9A17800CE6EFC /* MainInterface.xib */; };
 		31FF7A2C15C7293100260FDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FF7A2B15C7293100260FDF /* Foundation.framework */; };
-		31FF7A3115C7293100260FDF /* ObserverSet.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 31FF7A3015C7293100260FDF /* ObserverSet.h */; };
-		31FF7A3315C7293100260FDF /* ObserverSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF7A3215C7293100260FDF /* ObserverSet.m */; };
+		31FF7A3115C7293100260FDF /* DqdObserverSet.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 31FF7A3015C7293100260FDF /* DqdObserverSet.h */; };
+		31FF7A3315C7293100260FDF /* DqdObserverSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF7A3215C7293100260FDF /* DqdObserverSet.m */; };
 		31FF7A3B15C7293200260FDF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FF7A3A15C7293200260FDF /* SenTestingKit.framework */; };
 		31FF7A3D15C7293200260FDF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FF7A3C15C7293200260FDF /* UIKit.framework */; };
 		31FF7A3E15C7293200260FDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FF7A2B15C7293100260FDF /* Foundation.framework */; };
-		31FF7A4115C7293200260FDF /* libObserverSet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FF7A2815C7293100260FDF /* libObserverSet.a */; };
+		31FF7A4115C7293200260FDF /* libDqdObserverSet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FF7A2815C7293100260FDF /* libDqdObserverSet.a */; };
 		31FF7A4715C7293200260FDF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 31FF7A4515C7293200260FDF /* InfoPlist.strings */; };
-		31FF7A4A15C7293200260FDF /* ObserverSetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF7A4915C7293200260FDF /* ObserverSetTests.m */; };
-		31FF7A5515C7353600260FDF /* ObserverSetReentrancyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF7A5415C7353600260FDF /* ObserverSetReentrancyTests.m */; };
+		31FF7A4A15C7293200260FDF /* Dqd.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF7A4915C7293200260FDF /* Dqd.m */; };
+		31FF7A5515C7353600260FDF /* DqdObserverSetReentrancyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF7A5415C7353600260FDF /* DqdObserverSetReentrancyTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,7 @@
 			containerPortal = 31FF7A1F15C7293100260FDF /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 31FF7A2715C7293100260FDF;
-			remoteInfo = ObserverSet;
+			remoteInfo = DqdObserverSet;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -47,19 +47,19 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				31FF7A3115C7293100260FDF /* ObserverSet.h in CopyFiles */,
+				31FF7A3115C7293100260FDF /* DqdObserverSet.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3121664E15C87D8300A1570B /* ObserverSetPerformanceTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObserverSetPerformanceTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3121664E15C87D8300A1570B /* DqdObserverSetPerformanceTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DqdObserverSetPerformanceTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3121665215C87D8300A1570B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		3121665615C87D8300A1570B /* ObserverSetPerformanceTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ObserverSetPerformanceTest-Info.plist"; sourceTree = "<group>"; };
+		3121665615C87D8300A1570B /* DqdObserverSetPerformanceTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DqdObserverSetPerformanceTest-Info.plist"; sourceTree = "<group>"; };
 		3121665815C87D8300A1570B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3121665A15C87D8300A1570B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3121665C15C87D8300A1570B /* ObserverSetPerformanceTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObserverSetPerformanceTest-Prefix.pch"; sourceTree = "<group>"; };
+		3121665C15C87D8300A1570B /* DqdObserverSetPerformanceTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DqdObserverSetPerformanceTest-Prefix.pch"; sourceTree = "<group>"; };
 		31C3261E15C9A2DB00DF55B8 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		31C3261F15C9A2DB00DF55B8 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		31C3262115C9A3EB00DF55B8 /* PerformanceTestProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PerformanceTestProtocol.h; sourceTree = "<group>"; };
@@ -70,20 +70,20 @@
 		31D216DF15C9A11800CE6EFC /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		31D216E015C9A11800CE6EFC /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		31D216E615C9A17800CE6EFC /* MainInterface.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainInterface.xib; sourceTree = "<group>"; };
-		31FF7A2815C7293100260FDF /* libObserverSet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libObserverSet.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		31FF7A2815C7293100260FDF /* libDqdObserverSet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDqdObserverSet.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		31FF7A2B15C7293100260FDF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		31FF7A2F15C7293100260FDF /* ObserverSet-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObserverSet-Prefix.pch"; sourceTree = "<group>"; };
-		31FF7A3015C7293100260FDF /* ObserverSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObserverSet.h; sourceTree = "<group>"; };
-		31FF7A3215C7293100260FDF /* ObserverSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObserverSet.m; sourceTree = "<group>"; };
-		31FF7A3915C7293200260FDF /* ObserverSetTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObserverSetTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		31FF7A2F15C7293100260FDF /* DqdObserverSet-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DqdObserverSet-Prefix.pch"; sourceTree = "<group>"; };
+		31FF7A3015C7293100260FDF /* DqdObserverSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DqdObserverSet.h; sourceTree = "<group>"; };
+		31FF7A3215C7293100260FDF /* DqdObserverSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DqdObserverSet.m; sourceTree = "<group>"; };
+		31FF7A3915C7293200260FDF /* DqdObserverSetTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DqdObserverSetTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31FF7A3A15C7293200260FDF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		31FF7A3C15C7293200260FDF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		31FF7A4415C7293200260FDF /* ObserverSetTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ObserverSetTests-Info.plist"; sourceTree = "<group>"; };
+		31FF7A4415C7293200260FDF /* DqdObserverSetTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DqdObserverSetTests-Info.plist"; sourceTree = "<group>"; };
 		31FF7A4615C7293200260FDF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		31FF7A4815C7293200260FDF /* ObserverSetTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObserverSetTests.h; sourceTree = "<group>"; };
-		31FF7A4915C7293200260FDF /* ObserverSetTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObserverSetTests.m; sourceTree = "<group>"; };
-		31FF7A5315C7353600260FDF /* ObserverSetReentrancyTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObserverSetReentrancyTests.h; sourceTree = "<group>"; };
-		31FF7A5415C7353600260FDF /* ObserverSetReentrancyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObserverSetReentrancyTests.m; sourceTree = "<group>"; };
+		31FF7A4815C7293200260FDF /* DqdObserverSetTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DqdObserverSetTests.h; sourceTree = "<group>"; };
+		31FF7A4915C7293200260FDF /* Dqd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dqd.m; sourceTree = "<group>"; };
+		31FF7A5315C7353600260FDF /* DqdObserverSetReentrancyTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DqdObserverSetReentrancyTests.h; sourceTree = "<group>"; };
+		31FF7A5415C7353600260FDF /* DqdObserverSetReentrancyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DqdObserverSetReentrancyTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3121666415C87D9000A1570B /* libObserverSet.a in Frameworks */,
+				3121666415C87D9000A1570B /* libDqdObserverSet.a in Frameworks */,
 				3121665015C87D8300A1570B /* UIKit.framework in Frameworks */,
 				3121665115C87D8300A1570B /* Foundation.framework in Frameworks */,
 				3121665315C87D8300A1570B /* CoreGraphics.framework in Frameworks */,
@@ -113,14 +113,14 @@
 				31FF7A3B15C7293200260FDF /* SenTestingKit.framework in Frameworks */,
 				31FF7A3D15C7293200260FDF /* UIKit.framework in Frameworks */,
 				31FF7A3E15C7293200260FDF /* Foundation.framework in Frameworks */,
-				31FF7A4115C7293200260FDF /* libObserverSet.a in Frameworks */,
+				31FF7A4115C7293200260FDF /* libDqdObserverSet.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3121665415C87D8300A1570B /* ObserverSetPerformanceTest */ = {
+		3121665415C87D8300A1570B /* DqdObserverSetPerformanceTest */ = {
 			isa = PBXGroup;
 			children = (
 				31D216E615C9A17800CE6EFC /* MainInterface.xib */,
@@ -135,16 +135,16 @@
 				31C3262615C9A49900DF55B8 /* PerformanceTestObserverWithOptionalMessages.m */,
 				3121665515C87D8300A1570B /* Supporting Files */,
 			);
-			path = ObserverSetPerformanceTest;
+			path = DqdObserverSetPerformanceTest;
 			sourceTree = "<group>";
 		};
 		3121665515C87D8300A1570B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				3121665A15C87D8300A1570B /* main.m */,
-				3121665615C87D8300A1570B /* ObserverSetPerformanceTest-Info.plist */,
+				3121665615C87D8300A1570B /* DqdObserverSetPerformanceTest-Info.plist */,
 				3121665715C87D8300A1570B /* InfoPlist.strings */,
-				3121665C15C87D8300A1570B /* ObserverSetPerformanceTest-Prefix.pch */,
+				3121665C15C87D8300A1570B /* DqdObserverSetPerformanceTest-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -152,9 +152,9 @@
 		31FF7A1D15C7293100260FDF = {
 			isa = PBXGroup;
 			children = (
-				31FF7A2D15C7293100260FDF /* ObserverSet */,
-				31FF7A4215C7293200260FDF /* ObserverSetTests */,
-				3121665415C87D8300A1570B /* ObserverSetPerformanceTest */,
+				31FF7A2D15C7293100260FDF /* DqdObserverSet */,
+				31FF7A4215C7293200260FDF /* DqdObserverSetTests */,
+				3121665415C87D8300A1570B /* DqdObserverSetPerformanceTest */,
 				31FF7A2A15C7293100260FDF /* Frameworks */,
 				31FF7A2915C7293100260FDF /* Products */,
 			);
@@ -163,9 +163,9 @@
 		31FF7A2915C7293100260FDF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				31FF7A2815C7293100260FDF /* libObserverSet.a */,
-				31FF7A3915C7293200260FDF /* ObserverSetTests.octest */,
-				3121664E15C87D8300A1570B /* ObserverSetPerformanceTest.app */,
+				31FF7A2815C7293100260FDF /* libDqdObserverSet.a */,
+				31FF7A3915C7293200260FDF /* DqdObserverSetTests.octest */,
+				3121664E15C87D8300A1570B /* DqdObserverSetPerformanceTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,40 +181,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		31FF7A2D15C7293100260FDF /* ObserverSet */ = {
+		31FF7A2D15C7293100260FDF /* DqdObserverSet */ = {
 			isa = PBXGroup;
 			children = (
-				31FF7A3015C7293100260FDF /* ObserverSet.h */,
-				31FF7A3215C7293100260FDF /* ObserverSet.m */,
+				31FF7A3015C7293100260FDF /* DqdObserverSet.h */,
+				31FF7A3215C7293100260FDF /* DqdObserverSet.m */,
 				31FF7A2E15C7293100260FDF /* Supporting Files */,
 			);
-			path = ObserverSet;
+			path = DqdObserverSet;
 			sourceTree = "<group>";
 		};
 		31FF7A2E15C7293100260FDF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				31FF7A2F15C7293100260FDF /* ObserverSet-Prefix.pch */,
+				31FF7A2F15C7293100260FDF /* DqdObserverSet-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		31FF7A4215C7293200260FDF /* ObserverSetTests */ = {
+		31FF7A4215C7293200260FDF /* DqdObserverSetTests */ = {
 			isa = PBXGroup;
 			children = (
-				31FF7A4815C7293200260FDF /* ObserverSetTests.h */,
-				31FF7A4915C7293200260FDF /* ObserverSetTests.m */,
+				31FF7A4815C7293200260FDF /* DqdObserverSetTests.h */,
+				31FF7A4915C7293200260FDF /* Dqd.m */,
 				31FF7A4315C7293200260FDF /* Supporting Files */,
-				31FF7A5315C7353600260FDF /* ObserverSetReentrancyTests.h */,
-				31FF7A5415C7353600260FDF /* ObserverSetReentrancyTests.m */,
+				31FF7A5315C7353600260FDF /* DqdObserverSetReentrancyTests.h */,
+				31FF7A5415C7353600260FDF /* DqdObserverSetReentrancyTests.m */,
 			);
-			path = ObserverSetTests;
+			path = DqdObserverSetTests;
 			sourceTree = "<group>";
 		};
 		31FF7A4315C7293200260FDF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				31FF7A4415C7293200260FDF /* ObserverSetTests-Info.plist */,
+				31FF7A4415C7293200260FDF /* DqdObserverSetTests-Info.plist */,
 				31FF7A4515C7293200260FDF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -223,9 +223,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3121664D15C87D8300A1570B /* ObserverSetPerformanceTest */ = {
+		3121664D15C87D8300A1570B /* DqdObserverSetPerformanceTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3121666215C87D8300A1570B /* Build configuration list for PBXNativeTarget "ObserverSetPerformanceTest" */;
+			buildConfigurationList = 3121666215C87D8300A1570B /* Build configuration list for PBXNativeTarget "DqdObserverSetPerformanceTest" */;
 			buildPhases = (
 				3121664A15C87D8300A1570B /* Sources */,
 				3121664B15C87D8300A1570B /* Frameworks */,
@@ -235,14 +235,14 @@
 			);
 			dependencies = (
 			);
-			name = ObserverSetPerformanceTest;
-			productName = ObserverSetPerformanceTest;
-			productReference = 3121664E15C87D8300A1570B /* ObserverSetPerformanceTest.app */;
+			name = DqdObserverSetPerformanceTest;
+			productName = DqdObserverSetPerformanceTest;
+			productReference = 3121664E15C87D8300A1570B /* DqdObserverSetPerformanceTest.app */;
 			productType = "com.apple.product-type.application";
 		};
-		31FF7A2715C7293100260FDF /* ObserverSet */ = {
+		31FF7A2715C7293100260FDF /* DqdObserverSet */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 31FF7A4D15C7293200260FDF /* Build configuration list for PBXNativeTarget "ObserverSet" */;
+			buildConfigurationList = 31FF7A4D15C7293200260FDF /* Build configuration list for PBXNativeTarget "DqdObserverSet" */;
 			buildPhases = (
 				31FF7A2415C7293100260FDF /* Sources */,
 				31FF7A2515C7293100260FDF /* Frameworks */,
@@ -252,14 +252,14 @@
 			);
 			dependencies = (
 			);
-			name = ObserverSet;
-			productName = ObserverSet;
-			productReference = 31FF7A2815C7293100260FDF /* libObserverSet.a */;
+			name = DqdObserverSet;
+			productName = DqdObserverSet;
+			productReference = 31FF7A2815C7293100260FDF /* libDqdObserverSet.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		31FF7A3815C7293100260FDF /* ObserverSetTests */ = {
+		31FF7A3815C7293100260FDF /* DqdObserverSetTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 31FF7A5015C7293200260FDF /* Build configuration list for PBXNativeTarget "ObserverSetTests" */;
+			buildConfigurationList = 31FF7A5015C7293200260FDF /* Build configuration list for PBXNativeTarget "DqdObserverSetTests" */;
 			buildPhases = (
 				31FF7A3415C7293100260FDF /* Sources */,
 				31FF7A3515C7293100260FDF /* Frameworks */,
@@ -271,9 +271,9 @@
 			dependencies = (
 				31FF7A4015C7293200260FDF /* PBXTargetDependency */,
 			);
-			name = ObserverSetTests;
-			productName = ObserverSetTests;
-			productReference = 31FF7A3915C7293200260FDF /* ObserverSetTests.octest */;
+			name = DqdObserverSetTests;
+			productName = DqdObserverSetTests;
+			productReference = 31FF7A3915C7293200260FDF /* DqdObserverSetTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -285,7 +285,7 @@
 				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = "Rob Mayoff";
 			};
-			buildConfigurationList = 31FF7A2215C7293100260FDF /* Build configuration list for PBXProject "ObserverSet" */;
+			buildConfigurationList = 31FF7A2215C7293100260FDF /* Build configuration list for PBXProject "DqdObserverSet" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -297,9 +297,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				31FF7A2715C7293100260FDF /* ObserverSet */,
-				31FF7A3815C7293100260FDF /* ObserverSetTests */,
-				3121664D15C87D8300A1570B /* ObserverSetPerformanceTest */,
+				31FF7A2715C7293100260FDF /* DqdObserverSet */,
+				31FF7A3815C7293100260FDF /* DqdObserverSetTests */,
+				3121664D15C87D8300A1570B /* DqdObserverSetPerformanceTest */,
 			);
 		};
 /* End PBXProject section */
@@ -357,7 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31FF7A3315C7293100260FDF /* ObserverSet.m in Sources */,
+				31FF7A3315C7293100260FDF /* DqdObserverSet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,8 +365,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31FF7A4A15C7293200260FDF /* ObserverSetTests.m in Sources */,
-				31FF7A5515C7353600260FDF /* ObserverSetReentrancyTests.m in Sources */,
+				31FF7A4A15C7293200260FDF /* Dqd.m in Sources */,
+				31FF7A5515C7353600260FDF /* DqdObserverSetReentrancyTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,7 +375,7 @@
 /* Begin PBXTargetDependency section */
 		31FF7A4015C7293200260FDF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 31FF7A2715C7293100260FDF /* ObserverSet */;
+			target = 31FF7A2715C7293100260FDF /* DqdObserverSet */;
 			targetProxy = 31FF7A3F15C7293200260FDF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -409,10 +409,10 @@
 					"\"$(SYSTEM_APPS_DIR)/Xcode45-DP2.app/Contents/Developer/Library/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ObserverSetPerformanceTest/ObserverSetPerformanceTest-Prefix.pch";
-				INFOPLIST_FILE = "ObserverSetPerformanceTest/ObserverSetPerformanceTest-Info.plist";
+				GCC_PREFIX_HEADER = "DqdObserverSetPerformanceTest/DqdObserverSetPerformanceTest-Prefix.pch";
+				INFOPLIST_FILE = "DqdObserverSetPerformanceTest/DqdObserverSetPerformanceTest-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DqdObserverSetPerformanceTest;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -426,11 +426,11 @@
 					"\"$(SYSTEM_APPS_DIR)/Xcode45-DP2.app/Contents/Developer/Library/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ObserverSetPerformanceTest/ObserverSetPerformanceTest-Prefix.pch";
-				INFOPLIST_FILE = "ObserverSetPerformanceTest/ObserverSetPerformanceTest-Info.plist";
+				GCC_PREFIX_HEADER = "DqdObserverSetPerformanceTest/DqdObserverSetPerformanceTest-Prefix.pch";
+				INFOPLIST_FILE = "DqdObserverSetPerformanceTest/DqdObserverSetPerformanceTest-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DqdObserverSetPerformanceTest;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -484,11 +484,10 @@
 		31FF7A4E15C7293200260FDF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /tmp/ObserverSet.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ObserverSet/ObserverSet-Prefix.pch";
+				GCC_PREFIX_HEADER = "DqdObserverSet/DqdObserverSet-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DqdObserverSet;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -496,11 +495,10 @@
 		31FF7A4F15C7293200260FDF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /tmp/ObserverSet.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ObserverSet/ObserverSet-Prefix.pch";
+				GCC_PREFIX_HEADER = "DqdObserverSet/DqdObserverSet-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DqdObserverSet;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -513,9 +511,9 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ObserverSet/ObserverSet-Prefix.pch";
-				INFOPLIST_FILE = "ObserverSetTests/ObserverSetTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "DqdObserverSet/DqdObserverSet-Prefix.pch";
+				INFOPLIST_FILE = "DqdObserverSetTests/DqdObserverSetTests-Info.plist";
+				PRODUCT_NAME = DqdObserverSetTests;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -528,9 +526,9 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ObserverSet/ObserverSet-Prefix.pch";
-				INFOPLIST_FILE = "ObserverSetTests/ObserverSetTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "DqdObserverSet/DqdObserverSet-Prefix.pch";
+				INFOPLIST_FILE = "DqdObserverSetTests/DqdObserverSetTests-Info.plist";
+				PRODUCT_NAME = DqdObserverSetTests;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -538,7 +536,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3121666215C87D8300A1570B /* Build configuration list for PBXNativeTarget "ObserverSetPerformanceTest" */ = {
+		3121666215C87D8300A1570B /* Build configuration list for PBXNativeTarget "DqdObserverSetPerformanceTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3121666015C87D8300A1570B /* Debug */,
@@ -547,7 +545,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		31FF7A2215C7293100260FDF /* Build configuration list for PBXProject "ObserverSet" */ = {
+		31FF7A2215C7293100260FDF /* Build configuration list for PBXProject "DqdObserverSet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				31FF7A4B15C7293200260FDF /* Debug */,
@@ -556,7 +554,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		31FF7A4D15C7293200260FDF /* Build configuration list for PBXNativeTarget "ObserverSet" */ = {
+		31FF7A4D15C7293200260FDF /* Build configuration list for PBXNativeTarget "DqdObserverSet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				31FF7A4E15C7293200260FDF /* Debug */,
@@ -565,7 +563,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		31FF7A5015C7293200260FDF /* Build configuration list for PBXNativeTarget "ObserverSetTests" */ = {
+		31FF7A5015C7293200260FDF /* Build configuration list for PBXNativeTarget "DqdObserverSetTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				31FF7A5115C7293200260FDF /* Debug */,

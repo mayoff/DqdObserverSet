@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'ObserverSetPerformanceTest' target in the 'ObserverSetPerformanceTest' project
+// Prefix header for all source files of the 'DqdObserverSetPerformanceTest' target in the 'DqdObserverSetPerformanceTest' project
 //
 
 #import <Availability.h>
