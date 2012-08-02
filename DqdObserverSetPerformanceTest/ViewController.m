@@ -7,7 +7,7 @@ Copyright (c) 2012 Rob Mayoff. All rights reserved.
 #import "PerformanceTestProtocol.h"
 #import "PerformanceTestObserver.h"
 #import "PerformanceTestObserverWithOptionalMessages.h"
-#import <ObserverSet/ObserverSet.h>
+#import <DqdObserverSet/DqdObserverSet.h>
 #import <sys/time.h>
 
 @interface ViewController ()
@@ -25,7 +25,7 @@ Copyright (c) 2012 Rob Mayoff. All rights reserved.
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
-    dispatch_queue_t queue = dispatch_queue_create("com.dqd.ObserverSetPerformanceTest", 0);
+    dispatch_queue_t queue = dispatch_queue_create("com.dqd.DqdObserverSetPerformanceTest", 0);
     dispatch_async(queue, ^{
         [self runTests];
     });
@@ -64,7 +64,7 @@ typedef struct {
 static PerformanceData testCreateAndSendWithNoObservers(void) {
     TestPreamble {
         @autoreleasepool {
-            ObserverSet *set = [[ObserverSet alloc] init];
+            DqdObserverSet *set = [[DqdObserverSet alloc] init];
             set.protocol = @protocol(PerformanceTestProtocol);
             [set.proxy requiredMessage0WithObject:nil object:nil];
         }
@@ -72,7 +72,7 @@ static PerformanceData testCreateAndSendWithNoObservers(void) {
 }
 
 static PerformanceData testSendRequiredMessageWithObserverCount(NSUInteger observerCount) {
-    ObserverSet *set = [[ObserverSet alloc] init];
+    DqdObserverSet *set = [[DqdObserverSet alloc] init];
     set.protocol = @protocol(PerformanceTestProtocol);
     NSMutableArray *strongRefs = [[NSMutableArray alloc] init];
     for (NSUInteger i = 0; i < observerCount; ++i) {
@@ -87,7 +87,7 @@ static PerformanceData testSendRequiredMessageWithObserverCount(NSUInteger obser
 }
 
 static PerformanceData testSendIgnoredOptionalMessageWithObserverCount(NSUInteger observerCount) {
-    ObserverSet *set = [[ObserverSet alloc] init];
+    DqdObserverSet *set = [[DqdObserverSet alloc] init];
     set.protocol = @protocol(PerformanceTestProtocol);
     NSMutableArray *strongRefs = [[NSMutableArray alloc] init];
     for (NSUInteger i = 0; i < observerCount; ++i) {
@@ -102,7 +102,7 @@ static PerformanceData testSendIgnoredOptionalMessageWithObserverCount(NSUIntege
 }
 
 static PerformanceData testSendHandledOptionalMessageWithObserverCount(NSUInteger observerCount) {
-    ObserverSet *set = [[ObserverSet alloc] init];
+    DqdObserverSet *set = [[DqdObserverSet alloc] init];
     set.protocol = @protocol(PerformanceTestProtocol);
     NSMutableArray *strongRefs = [[NSMutableArray alloc] init];
     for (NSUInteger i = 0; i < observerCount; ++i) {

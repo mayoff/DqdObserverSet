@@ -5,6 +5,6 @@ Copyright (c) 2012 Rob Mayoff. All rights reserved.
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface ObserverSetTests : SenTestCase
+@interface DqdObserverSetTests : SenTestCase
 
 @end

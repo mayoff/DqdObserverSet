@@ -3,8 +3,8 @@ Created by Rob Mayoff on 7/30/12.
 Copyright (c) 2012 Rob Mayoff. All rights reserved.
 */
 
-#import "ObserverSetTests.h"
-#import "ObserverSet.h"
+#import "DqdObserverSetTests.h"
+#import "DqdObserverSet.h"
 
 @protocol TestProtocol
 
@@ -43,14 +43,14 @@ Copyright (c) 2012 Rob Mayoff. All rights reserved.
 @interface OptionalMessagesObserver : RequiredMessagesObserver <TestProtocol>
 @end
 
-@implementation ObserverSetTests {
-    ObserverSet *observerSet_;
+@implementation DqdObserverSetTests {
+    DqdObserverSet *observerSet_;
     NSMutableArray *observers_;
 }
 
 - (void)setUp {
     [super setUp];
-    observerSet_ = [[ObserverSet alloc] init];
+    observerSet_ = [[DqdObserverSet alloc] init];
     observerSet_.protocol = @protocol(TestProtocol);
     observers_ = [[NSMutableArray alloc] init];
 }

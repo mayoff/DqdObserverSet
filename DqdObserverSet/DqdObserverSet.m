@@ -3,11 +3,11 @@ Created by Rob Mayoff on 7/30/12.
 Copyright (c) 2012 Rob Mayoff. All rights reserved.
 */
 
-#import "ObserverSet.h"
+#import "DqdObserverSet.h"
 #import <objc/runtime.h>
 
-@interface ObserverSetMessageProxy : NSObject
-@property (nonatomic, unsafe_unretained) ObserverSet *observerSet;
+@interface DqdObserverSetMessageProxy : NSObject
+@property (nonatomic, unsafe_unretained) DqdObserverSet *observerSet;
 @end
 
 static NSMutableSet *nonRetainingSet(void) {
@@ -23,11 +23,11 @@ static NSMutableSet *nonRetainingSet(void) {
     return CFBridgingRelease(CFSetCreateMutable(NULL, 0, &callbacks));
 }
 
-@implementation ObserverSet {
+@implementation DqdObserverSet {
     NSMutableSet *observers_;
     NSMutableSet *pendingAdditions_;
     NSMutableSet *pendingDeletions_;
-    ObserverSetMessageProxy *_proxy_cached;
+    DqdObserverSetMessageProxy *_proxy_cached;
     BOOL isForwarding_;
 }
 
@@ -57,13 +57,13 @@ static NSMutableSet *nonRetainingSet(void) {
 
 - (id)proxy {
     if (!_proxy_cached) {
-        _proxy_cached = [[ObserverSetMessageProxy alloc] init];
+        _proxy_cached = [[DqdObserverSetMessageProxy alloc] init];
         _proxy_cached.observerSet = self;
     }
     return _proxy_cached;
 }
 
-#pragma mark - ObserverSetMessageProxy API
+#pragma mark - DqdObserverSetMessageProxy API
 
 - (NSMethodSignature *)protocolMethodSignatureForSelector:(SEL)selector {
     NSAssert(_protocol != nil, @"%@ protocol not set", self);
@@ -106,7 +106,7 @@ static NSMutableSet *nonRetainingSet(void) {
 
 @end
 
-@implementation ObserverSetMessageProxy
+@implementation DqdObserverSetMessageProxy
 
 @synthesize observerSet = _observerSet;
 

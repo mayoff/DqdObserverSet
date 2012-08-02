@@ -6,7 +6,7 @@ Copyright (c) 2012 Rob Mayoff. All rights reserved.
 #import <Foundation/Foundation.h>
 
 /**
-## ObserverSet
+## DqdObserverSet
 
 You use me when you want to manage a set of observers and send messages to all of the observers in the set.
 
@@ -29,7 +29,7 @@ For example, suppose you have this observer protocol:
 
 You tell me to use this protocol by setting my `protocol` property:
 
-    ObserverSet *observers = ...;
+    DqdObserverSet *observers = ...;
     observers.protocol = @protocol(MyObserverProtocol);
     
 After you've set my `protocol`, you can send messages to the observers.  Just send the message to my `proxy` object:
@@ -48,7 +48,7 @@ The proxy can forward messages with any signature, so you for example can also s
 
 */
 
-@interface ObserverSet : NSObject
+@interface DqdObserverSet : NSObject
 
 /**
 Add `observer` to my set, if it's not there already.  Otherwise, do nothing.
