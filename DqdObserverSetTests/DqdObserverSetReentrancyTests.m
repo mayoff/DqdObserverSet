@@ -23,8 +23,7 @@ Copyright (c) 2012 Rob Mayoff. All rights reserved.
 
 - (void)setUp {
     [super setUp];
-    observerSet_ = [[DqdObserverSet alloc] init];
-    observerSet_.protocol = @protocol(ReentrantTestProtocol);
+    observerSet_ = [[DqdObserverSet alloc] initWithProtocol:@protocol(ReentrantTestProtocol)];
     observer0_ = [[ReentrantTestObserver alloc] init];
     observer1_ = [[ReentrantTestObserver alloc] init];
 }

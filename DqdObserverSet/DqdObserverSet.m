@@ -35,6 +35,20 @@ static NSMutableSet *nonRetainingSet(void) {
 
 #pragma mark - Public API
 
+- (id)init {
+    NSLog(@"I only understand -[%@ initWithProtocol:], not -[%@ init].", self.class, self.class);
+    [self doesNotRecognizeSelector:_cmd]; abort();
+}
+
+- (id)initWithProtocol:(Protocol *)protocol {
+    if (!(self = [super init]))
+        return nil;
+
+    _protocol = protocol;
+
+    return self;
+}
+
 - (void)addObserver:(id)observer {
     __strong NSMutableSet **set = isForwarding_ ? &pendingAdditions_ : &observers_;
 
