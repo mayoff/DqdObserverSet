@@ -66,7 +66,25 @@ static const SEL kRequiredSelectorPlaceholder = (SEL)NULL;
 
 #pragma mark - Public API
 
+- (id)init {
+    NSLog(@"I only understand -[%@ initWithProtocol:], not -[%@ init].", self.class, self.class);
+    [self doesNotRecognizeSelector:_cmd]; abort();
+}
+
+- (id)initWithProtocol:(Protocol *)protocol {
+    if (!(self = [super init]))
+        return nil;
+
+    _protocol = protocol;
+
+    return self;
+}
+
 - (void)addObserver:(id)observer {
+    if (isForwarding_ && pendingDeletions_) {
+        [pendingDeletions_ removeObject:observer];
+    }
+    
     __strong NSMutableSet **set = isForwarding_ ? &pendingAdditions_ : &observers_;
 
     if (!*set) {
@@ -77,6 +95,9 @@ static const SEL kRequiredSelectorPlaceholder = (SEL)NULL;
 
 - (void)removeObserver:(id)observer {
     if (isForwarding_) {
+        if (pendingAdditions_) {
+            [pendingAdditions_ removeObject:observer];
+        }
         if (!pendingDeletions_) {
             pendingDeletions_ = nonRetainingSet();
         }

@@ -50,8 +50,7 @@ Copyright (c) 2012 Rob Mayoff. All rights reserved.
 
 - (void)setUp {
     [super setUp];
-    observerSet_ = [[DqdObserverSet alloc] init];
-    observerSet_.protocol = @protocol(TestProtocol);
+    observerSet_ = [[DqdObserverSet alloc] initWithProtocol:@protocol(TestProtocol)];
     observers_ = [[NSMutableArray alloc] init];
 }
 

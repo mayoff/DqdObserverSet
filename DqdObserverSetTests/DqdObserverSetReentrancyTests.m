@@ -12,7 +12,7 @@ Copyright (c) 2012 Rob Mayoff. All rights reserved.
 
 @interface ReentrantTestObserver : NSObject <ReentrantTestProtocol>
 @property (nonatomic, strong) dispatch_block_t block;
-@property (nonatomic, readonly) BOOL receivedMessage;
+@property (nonatomic) BOOL receivedMessage;
 @end
 
 @implementation DqdObserverSetReentrancyTests {
@@ -23,8 +23,7 @@ Copyright (c) 2012 Rob Mayoff. All rights reserved.
 
 - (void)setUp {
     [super setUp];
-    observerSet_ = [[DqdObserverSet alloc] init];
-    observerSet_.protocol = @protocol(ReentrantTestProtocol);
+    observerSet_ = [[DqdObserverSet alloc] initWithProtocol:@protocol(ReentrantTestProtocol)];
     observer0_ = [[ReentrantTestObserver alloc] init];
     observer1_ = [[ReentrantTestObserver alloc] init];
 }
@@ -64,6 +63,36 @@ Copyright (c) 2012 Rob Mayoff. All rights reserved.
 
     STAssertTrue(observer0_.receivedMessage, @"observer0 received the message");
     STAssertFalse(observer1_.receivedMessage, @"observer1 didn't receive the message");
+}
+
+- (void)testObserverSetForgetsObserverThatIsAddedThenDeletedWhileInCallback {
+    __unsafe_unretained DqdObserverSetReentrancyTests *me = self;
+    observer0_.block = ^{
+        [me->observerSet_ addObserver:me->observer1_];
+        [me->observerSet_ removeObserver:me->observer1_];
+    };
+
+    [observerSet_  addObserver:observer0_];
+    [observerSet_.proxy message];
+
+    // Now make sure observer1_ isn't in observerSet_.
+    [observerSet_.proxy message];
+    STAssertFalse(observer1_.receivedMessage, @"observer1 didn't receive any messages");
+}
+
+- (void)testObserverSetRemembersObserverThatIsDeletedThenAddedWhileInCallback {
+    __unsafe_unretained DqdObserverSetReentrancyTests *me = self;
+    observer0_.block = ^{
+        [me->observerSet_ removeObserver:me->observer1_];
+        [me->observerSet_ addObserver:me->observer1_];
+    };
+
+    [observerSet_  addObserver:observer0_];
+    [observerSet_.proxy message];
+
+    // Now make sure observer1_ is in observerSet_.
+    [observerSet_.proxy message];
+    STAssertTrue(observer1_.receivedMessage, @"observer1 didn't receive a message");
 }
 
 @end
