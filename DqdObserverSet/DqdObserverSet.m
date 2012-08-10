@@ -50,6 +50,10 @@ static NSMutableSet *nonRetainingSet(void) {
 }
 
 - (void)addObserver:(id)observer {
+    if (isForwarding_ && pendingDeletions_) {
+        [pendingDeletions_ removeObject:observer];
+    }
+    
     __strong NSMutableSet **set = isForwarding_ ? &pendingAdditions_ : &observers_;
 
     if (!*set) {
@@ -60,6 +64,9 @@ static NSMutableSet *nonRetainingSet(void) {
 
 - (void)removeObserver:(id)observer {
     if (isForwarding_) {
+        if (pendingAdditions_) {
+            [pendingAdditions_ removeObject:observer];
+        }
         if (!pendingDeletions_) {
             pendingDeletions_ = nonRetainingSet();
         }
