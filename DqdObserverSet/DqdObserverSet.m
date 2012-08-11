@@ -17,18 +17,6 @@ I dynamically create a subclass of ObserverSetMessageProxy for each protocol giv
 
 + (Class)subclassForProtocol:(Protocol *)protocol;
 
-+ (CFDictionaryRef)copyMethodDictionary;
-
-@end
-
-@interface DqdObserverSetMessageProxyRequiredMessagesTemplate : DqdObserverSetMessageProxy
-+ (BOOL)requiredMessages;
-+ (IMP)methodImplementationForTypes:(const char *)types;
-@end
-
-@interface DqdObserverSetMessageProxyOptionalMessagesTemplate: DqdObserverSetMessageProxy
-+ (BOOL)requiredMessages;
-+ (IMP)methodImplementationForTypes:(const char *)types;
 @end
 
 /*
@@ -148,11 +136,19 @@ static const SEL kRequiredSelectorPlaceholder = (SEL)NULL;
 
 @end
 
+@interface DqdObserverSetMessageProxyRequiredMessagesTemplate : DqdObserverSetMessageProxy
++ (BOOL)requiredMessages;
+@end
+
+@interface DqdObserverSetMessageProxyOptionalMessagesTemplate: DqdObserverSetMessageProxy
++ (BOOL)requiredMessages;
+@end
+
 @implementation DqdObserverSetMessageProxy
 
 @synthesize observerSet = _observerSet;
 
-#pragma mark - Message forwarding
+#pragma mark - Generic message forwarding
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
     return [self.observerSet protocolMethodSignatureForSelector:aSelector];
@@ -186,20 +182,21 @@ static const SEL kRequiredSelectorPlaceholder = (SEL)NULL;
 + (void)copyMethodsForProtocol:(Protocol *)protocol fromTemplateClass:(Class)templateClass {
     unsigned int count;
     struct objc_method_description *descriptions = protocol_copyMethodDescriptionList(protocol, [templateClass requiredMessages], YES, &count);
+    CFDictionaryRef dictionary = [self methodImplementationsForTypesDictionary];
     for (unsigned int i = 0; i < count; ++i) {
-        [self copyMethodFromTemplateClass:templateClass forMessage:descriptions + i];
+        [self copyMethodFromDictionary:dictionary forMessage:descriptions + i];
     }
     free(descriptions);
 }
 
-+ (void)copyMethodFromTemplateClass:(Class)templateClass forMessage:(struct objc_method_description *)description {
-    IMP imp = [templateClass methodImplementationForTypes:description->types];
++ (void)copyMethodFromDictionary:(CFDictionaryRef)methodImplementationsForTypes forMessage:(struct objc_method_description *)description {
+    IMP imp = CFDictionaryGetValue(methodImplementationsForTypes, description->types);
     if (imp) {
         class_addMethod(self, description->name, imp, description->types);
     }
 }
 
-#pragma mark - Method dictionary
+#pragma mark - Method types to IMP dictionary
 
 static CFStringRef methodDictionaryCopyKeyDescription(const void *key) {
     return CFStringCreateWithCString(NULL, key, kCFStringEncodingUTF8);
@@ -218,29 +215,42 @@ static CFHashCode methodDictionaryKeyHash(const void *key) {
     return hash;
 }
 
-+ (CFDictionaryRef)copyMethodDictionary {
-    unsigned int count;
-    Method *methods = class_copyMethodList(self, &count);
-    
-    const void **keys = malloc(count * sizeof *keys);
-    const void **values = malloc(count * sizeof *values);
-    for (unsigned int i = 0; i < count; ++i) {
-        keys[i] = method_getTypeEncoding(methods[i]);
-        values[i] = method_getImplementation(methods[i]);
++ (CFDictionaryRef)methodImplementationsForTypesDictionary {
+    // This method is to be called on the template subclasses only.
+
+    @synchronized (self) {
+        static const void *kKey = (void *)"methodImplementationsForTypesDictionary";
+
+        CFDictionaryRef dictionary = (__bridge CFDictionaryRef)objc_getAssociatedObject(self, kKey);
+        if (!dictionary) {
+            unsigned int count;
+            Method *methods = class_copyMethodList(self, &count);
+
+            const void **keys = malloc(count * sizeof *keys);
+            const void **values = malloc(count * sizeof *values);
+            for (unsigned int i = 0; i < count; ++i) {
+                keys[i] = method_getTypeEncoding(methods[i]);
+                values[i] = method_getImplementation(methods[i]);
+            }
+
+            free(methods);
+
+            CFDictionaryKeyCallBacks keyCallbacks = {
+                .version = 0,
+                .retain = NULL,
+                .release = NULL,
+                .copyDescription  = methodDictionaryCopyKeyDescription,
+                .equal = methodDictionaryKeyEqual,
+                .hash = methodDictionaryKeyHash
+            };
+
+            dictionary = CFDictionaryCreate(NULL, keys, values, count, &keyCallbacks, NULL);
+            free(keys);
+            free(values);
+            objc_setAssociatedObject(self, kKey, CFBridgingRelease(dictionary), OBJC_ASSOCIATION_RETAIN);
+        }
+        return dictionary;
     }
-
-    free(methods);
-
-    CFDictionaryKeyCallBacks keyCallbacks = {
-        .version = 0,
-        .retain = NULL,
-        .release = NULL,
-        .copyDescription  = methodDictionaryCopyKeyDescription,
-        .equal = methodDictionaryKeyEqual,
-        .hash = methodDictionaryKeyHash
-    };
-
-    return CFDictionaryCreate(NULL, keys, values, count, &keyCallbacks, NULL);
 }
 
 @end
@@ -249,20 +259,6 @@ static CFHashCode methodDictionaryKeyHash(const void *key) {
 
 + (BOOL)requiredMessages {
     return YES;
-}
-
-+ (CFDictionaryRef)methodDictionary {
-    // This has to be in each template class because each template class needs its own dictionary.
-    static CFDictionaryRef dictionary;
-    static dispatch_once_t once;
-    dispatch_once(&once, ^{
-        dictionary = [self copyMethodDictionary];
-    });
-    return dictionary;
-}
-
-+ (IMP)methodImplementationForTypes:(const char *)types {
-    return CFDictionaryGetValue([self methodDictionary], types);
 }
 
 - (void)message {
@@ -292,20 +288,6 @@ static CFHashCode methodDictionaryKeyHash(const void *key) {
 
 + (BOOL)requiredMessages {
     return NO;
-}
-
-+ (CFDictionaryRef)methodDictionary {
-    // This has to be in each template class because each template class needs its own dictionary.
-    static CFDictionaryRef dictionary;
-    static dispatch_once_t once;
-    dispatch_once(&once, ^{
-        dictionary = [self copyMethodDictionary];
-    });
-    return dictionary;
-}
-
-+ (IMP)methodImplementationForTypes:(const char *)types {
-    return CFDictionaryGetValue([self methodDictionary], types);
 }
 
 - (void)message {
