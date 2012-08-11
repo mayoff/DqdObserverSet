@@ -64,16 +64,14 @@ typedef struct {
 static PerformanceData testCreateAndSendWithNoObservers(void) {
     TestPreamble {
         @autoreleasepool {
-            DqdObserverSet *set = [[DqdObserverSet alloc] init];
-            set.protocol = @protocol(PerformanceTestProtocol);
+            DqdObserverSet *set = [[DqdObserverSet alloc] initWithProtocol:@protocol(PerformanceTestProtocol)];
             [set.proxy requiredMessage0WithObject:nil object:nil];
         }
     } TestPostamble
 }
 
 static PerformanceData testSendRequiredMessageWithObserverCount(NSUInteger observerCount) {
-    DqdObserverSet *set = [[DqdObserverSet alloc] init];
-    set.protocol = @protocol(PerformanceTestProtocol);
+    DqdObserverSet *set = [[DqdObserverSet alloc] initWithProtocol:@protocol(PerformanceTestProtocol)];
     NSMutableArray *strongRefs = [[NSMutableArray alloc] init];
     for (NSUInteger i = 0; i < observerCount; ++i) {
         PerformanceTestObserver *observer = [[PerformanceTestObserver alloc] init];
@@ -87,8 +85,7 @@ static PerformanceData testSendRequiredMessageWithObserverCount(NSUInteger obser
 }
 
 static PerformanceData testSendIgnoredOptionalMessageWithObserverCount(NSUInteger observerCount) {
-    DqdObserverSet *set = [[DqdObserverSet alloc] init];
-    set.protocol = @protocol(PerformanceTestProtocol);
+    DqdObserverSet *set = [[DqdObserverSet alloc] initWithProtocol:@protocol(PerformanceTestProtocol)];
     NSMutableArray *strongRefs = [[NSMutableArray alloc] init];
     for (NSUInteger i = 0; i < observerCount; ++i) {
         PerformanceTestObserver *observer = [[PerformanceTestObserver alloc] init];
@@ -102,8 +99,7 @@ static PerformanceData testSendIgnoredOptionalMessageWithObserverCount(NSUIntege
 }
 
 static PerformanceData testSendHandledOptionalMessageWithObserverCount(NSUInteger observerCount) {
-    DqdObserverSet *set = [[DqdObserverSet alloc] init];
-    set.protocol = @protocol(PerformanceTestProtocol);
+    DqdObserverSet *set = [[DqdObserverSet alloc] initWithProtocol:@protocol(PerformanceTestProtocol)];
     NSMutableArray *strongRefs = [[NSMutableArray alloc] init];
     for (NSUInteger i = 0; i < observerCount; ++i) {
         PerformanceTestObserver *observer = [[PerformanceTestObserverWithOptionalMessages alloc] init];
