@@ -27,13 +27,12 @@ static NSMutableSet *nonRetainingSet(void) {
     NSMutableSet *observers_;
     NSMutableSet *pendingAdditions_;
     NSMutableSet *pendingDeletions_;
-    DqdObserverSetMessageProxy *_proxy_cached;
     BOOL isForwarding_;
 }
 
-@dynamic proxy;
-
 #pragma mark - Public API
+
+@synthesize proxy = _proxy;
 
 - (id)init {
     NSLog(@"I only understand -[%@ initWithProtocol:], not -[%@ init].", self.class, self.class);
@@ -41,11 +40,11 @@ static NSMutableSet *nonRetainingSet(void) {
 }
 
 - (id)initWithProtocol:(Protocol *)protocol {
-    if (!(self = [super init]))
-        return nil;
-
-    _protocol = protocol;
-
+    if ((self = [super init])) {
+        _protocol = protocol;
+        _proxy = [[DqdObserverSetMessageProxy alloc] init];
+        [_proxy setObserverSet:self];
+    }
     return self;
 }
 
@@ -74,14 +73,6 @@ static NSMutableSet *nonRetainingSet(void) {
     } else {
         [observers_ removeObject:observer];
     }
-}
-
-- (id)proxy {
-    if (!_proxy_cached) {
-        _proxy_cached = [[DqdObserverSetMessageProxy alloc] init];
-        _proxy_cached.observerSet = self;
-    }
-    return _proxy_cached;
 }
 
 #pragma mark - DqdObserverSetMessageProxy API
