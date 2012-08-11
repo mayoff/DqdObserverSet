@@ -89,10 +89,12 @@ Copyright (c) 2012 Rob Mayoff. All rights reserved.
 
     [observerSet_  addObserver:observer0_];
     [observerSet_.proxy message];
+    STAssertFalse(observer1_.receivedMessage, @"observer1 didn't receive a message on the first send");
 
     // Now make sure observer1_ is in observerSet_.
+    observer0_.block = nil;
     [observerSet_.proxy message];
-    STAssertTrue(observer1_.receivedMessage, @"observer1 didn't receive a message");
+    STAssertTrue(observer1_.receivedMessage, @"observer1 received a message on the second send");
 }
 
 @end
