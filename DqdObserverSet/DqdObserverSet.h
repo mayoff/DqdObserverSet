@@ -74,6 +74,6 @@ If you send me this message while I'm sending a message to observers, and I have
 /**
 An object that forwards messages to my observers.  If you send it an optional message, it only forwards the message to those observers that respond to the message selector.
 */
-@property (nonatomic, strong) id proxy;
+@property (nonatomic, strong, readonly) id proxy;
 
 @end
