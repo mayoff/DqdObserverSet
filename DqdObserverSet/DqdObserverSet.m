@@ -43,6 +43,8 @@
 #pragma mark - DqdObserverSetMessageProxy API
 
 - (void)forwardInvocationToObservers:(NSInvocation *)invocation {
+    NSAssert(pendingObservers_ == nil, @"recursive "
+        "notification not supported");
     pendingObservers_ = CFBridgingRelease(
         CFSetCreateMutableCopy(NULL, 0,
             (__bridge CFTypeRef)observers_));
@@ -53,6 +55,7 @@
             [invocation invokeWithTarget:observer];
         }
     }
+    pendingObservers_ = nil;
 }
 
 - (NSMethodSignature *)protocolMethodSignatureForSelector:(SEL)selector {
