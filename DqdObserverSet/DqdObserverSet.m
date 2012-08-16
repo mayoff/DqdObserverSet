@@ -182,7 +182,7 @@ static const SEL kRequiredSelectorPlaceholder = (SEL)NULL;
 + (void)copyMethodsForProtocol:(Protocol *)protocol fromTemplateClass:(Class)templateClass {
     unsigned int count;
     struct objc_method_description *descriptions = protocol_copyMethodDescriptionList(protocol, [templateClass requiredMessages], YES, &count);
-    CFDictionaryRef dictionary = [self methodImplementationsForTypesDictionary];
+    CFDictionaryRef dictionary = [templateClass methodImplementationsForTypesDictionary];
     for (unsigned int i = 0; i < count; ++i) {
         [self copyMethodFromDictionary:dictionary forMessage:descriptions + i];
     }
