@@ -13,6 +13,7 @@
 #pragma mark - Public API
 
 @synthesize proxy = _proxy;
+@synthesize protocol = _protocol;
 
 - (id)initWithProtocol:(Protocol *)protocol {
     if (self = [super init]) {
