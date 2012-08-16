@@ -1,0 +1,861 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ActiveLayerIndex</key>
+	<integer>0</integer>
+	<key>ApplicationVersion</key>
+	<array>
+		<string>com.omnigroup.OmniGrafflePro</string>
+		<string>139.15.0.171074</string>
+	</array>
+	<key>AutoAdjust</key>
+	<false/>
+	<key>BackgroundGraphic</key>
+	<dict>
+		<key>Bounds</key>
+		<string>{{0, 0}, {576, 756}}</string>
+		<key>Class</key>
+		<string>SolidGraphic</string>
+		<key>ID</key>
+		<integer>2</integer>
+		<key>Style</key>
+		<dict>
+			<key>shadow</key>
+			<dict>
+				<key>Draws</key>
+				<string>NO</string>
+			</dict>
+			<key>stroke</key>
+			<dict>
+				<key>Draws</key>
+				<string>NO</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>BaseZoom</key>
+	<integer>0</integer>
+	<key>CanvasOrigin</key>
+	<string>{0, 0}</string>
+	<key>ColumnAlign</key>
+	<integer>1</integer>
+	<key>ColumnSpacing</key>
+	<real>36</real>
+	<key>CreationDate</key>
+	<string>2012-08-11 05:17:13 +0000</string>
+	<key>Creator</key>
+	<string>Rob Mayoff</string>
+	<key>DisplayScale</key>
+	<string>1 0/72 in = 1.0000 in</string>
+	<key>GraphDocumentVersion</key>
+	<integer>8</integer>
+	<key>GraphicsList</key>
+	<array>
+		<dict>
+			<key>Bounds</key>
+			<string>{{375.99997965494799, 8.6666674613942707}, {191, 21}}</string>
+			<key>Class</key>
+			<string>ShapedGraphic</string>
+			<key>FitText</key>
+			<string>YES</string>
+			<key>Flow</key>
+			<string>Resize</string>
+			<key>FontInfo</key>
+			<dict>
+				<key>Font</key>
+				<string>Palatino-Roman</string>
+				<key>Size</key>
+				<real>9</real>
+			</dict>
+			<key>ID</key>
+			<integer>23</integer>
+			<key>Shape</key>
+			<string>Rectangle</string>
+			<key>Style</key>
+			<dict>
+				<key>fill</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>shadow</key>
+				<dict>
+					<key>Beneath</key>
+					<string>YES</string>
+					<key>Color</key>
+					<dict>
+						<key>a</key>
+						<string>0.25</string>
+						<key>b</key>
+						<string>0</string>
+						<key>g</key>
+						<string>0</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
+					<key>Draws</key>
+					<string>NO</string>
+					<key>ShadowVector</key>
+					<string>{0, 2}</string>
+				</dict>
+				<key>stroke</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+			</dict>
+			<key>Text</key>
+			<dict>
+				<key>Text</key>
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf470
+{\fonttbl\f0\froman\fcharset0 Palatino-Roman;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs18 \cf0 http://github.com/mayoff/DqdObserverSet}</string>
+			</dict>
+			<key>TextPlacement</key>
+			<integer>0</integer>
+			<key>Wrap</key>
+			<string>NO</string>
+		</dict>
+		<dict>
+			<key>Class</key>
+			<string>LineGraphic</string>
+			<key>ID</key>
+			<integer>22</integer>
+			<key>Points</key>
+			<array>
+				<string>{292.33335367838544, 234}</string>
+				<string>{292.33335367838544, 741.99999999999989}</string>
+			</array>
+			<key>Style</key>
+			<dict>
+				<key>stroke</key>
+				<dict>
+					<key>HeadArrow</key>
+					<string>0</string>
+					<key>HeadScale</key>
+					<real>0.5</real>
+					<key>Legacy</key>
+					<true/>
+					<key>Pattern</key>
+					<integer>24</integer>
+					<key>TailArrow</key>
+					<string>0</string>
+					<key>Width</key>
+					<real>0.25</real>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Bounds</key>
+			<string>{{12.666666666666684, 175.33333333333266}, {28, 29}}</string>
+			<key>Class</key>
+			<string>ShapedGraphic</string>
+			<key>FitText</key>
+			<string>YES</string>
+			<key>Flow</key>
+			<string>Resize</string>
+			<key>FontInfo</key>
+			<dict>
+				<key>Font</key>
+				<string>Palatino-Roman</string>
+				<key>Size</key>
+				<real>18</real>
+			</dict>
+			<key>ID</key>
+			<integer>18</integer>
+			<key>Shape</key>
+			<string>Rectangle</string>
+			<key>Style</key>
+			<dict>
+				<key>fill</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>shadow</key>
+				<dict>
+					<key>Beneath</key>
+					<string>YES</string>
+					<key>Color</key>
+					<dict>
+						<key>a</key>
+						<string>0.25</string>
+						<key>b</key>
+						<string>0</string>
+						<key>g</key>
+						<string>0</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
+					<key>Draws</key>
+					<string>NO</string>
+					<key>ShadowVector</key>
+					<string>{0, 2}</string>
+				</dict>
+				<key>stroke</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+			</dict>
+			<key>Text</key>
+			<dict>
+				<key>Text</key>
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset77 ZapfDingbatsITC;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs36 \cf0 \uc0\u9985 }</string>
+			</dict>
+			<key>TextPlacement</key>
+			<integer>0</integer>
+			<key>Wrap</key>
+			<string>NO</string>
+		</dict>
+		<dict>
+			<key>Class</key>
+			<string>LineGraphic</string>
+			<key>ID</key>
+			<integer>19</integer>
+			<key>Points</key>
+			<array>
+				<string>{-2.0325183810676606e-05, 193.99999999999955}</string>
+				<string>{576.00000000000045, 193.99999999999955}</string>
+			</array>
+			<key>Style</key>
+			<dict>
+				<key>stroke</key>
+				<dict>
+					<key>HeadArrow</key>
+					<string>0</string>
+					<key>HeadScale</key>
+					<real>0.5</real>
+					<key>Legacy</key>
+					<true/>
+					<key>Pattern</key>
+					<integer>24</integer>
+					<key>TailArrow</key>
+					<string>0</string>
+					<key>Width</key>
+					<real>0.25</real>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Bounds</key>
+			<string>{{206.500010172526, 194.99998474121094}, {163, 34}}</string>
+			<key>Class</key>
+			<string>ShapedGraphic</string>
+			<key>FitText</key>
+			<string>YES</string>
+			<key>Flow</key>
+			<string>Resize</string>
+			<key>FontInfo</key>
+			<dict>
+				<key>Font</key>
+				<string>Palatino-Roman</string>
+				<key>Size</key>
+				<real>18</real>
+			</dict>
+			<key>ID</key>
+			<integer>14</integer>
+			<key>Shape</key>
+			<string>Rectangle</string>
+			<key>Style</key>
+			<dict>
+				<key>fill</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>shadow</key>
+				<dict>
+					<key>Beneath</key>
+					<string>YES</string>
+					<key>Color</key>
+					<dict>
+						<key>a</key>
+						<string>0.25</string>
+						<key>b</key>
+						<string>0</string>
+						<key>g</key>
+						<string>0</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
+					<key>Draws</key>
+					<string>NO</string>
+					<key>ShadowVector</key>
+					<string>{0, 2}</string>
+				</dict>
+				<key>stroke</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+			</dict>
+			<key>Text</key>
+			<dict>
+				<key>Text</key>
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf470
+{\fonttbl\f0\froman\fcharset0 Palatino-Roman;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs36 \cf0 DqdObserverSet.m}</string>
+			</dict>
+			<key>TextPlacement</key>
+			<integer>0</integer>
+			<key>Wrap</key>
+			<string>NO</string>
+		</dict>
+		<dict>
+			<key>Bounds</key>
+			<string>{{209, 8.6666667461390325}, {158, 34}}</string>
+			<key>Class</key>
+			<string>ShapedGraphic</string>
+			<key>FitText</key>
+			<string>YES</string>
+			<key>Flow</key>
+			<string>Resize</string>
+			<key>FontInfo</key>
+			<dict>
+				<key>Font</key>
+				<string>Palatino-Roman</string>
+				<key>Size</key>
+				<real>18</real>
+			</dict>
+			<key>ID</key>
+			<integer>13</integer>
+			<key>Shape</key>
+			<string>Rectangle</string>
+			<key>Style</key>
+			<dict>
+				<key>fill</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>shadow</key>
+				<dict>
+					<key>Beneath</key>
+					<string>YES</string>
+					<key>Color</key>
+					<dict>
+						<key>a</key>
+						<string>0.25</string>
+						<key>b</key>
+						<string>0</string>
+						<key>g</key>
+						<string>0</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
+					<key>Draws</key>
+					<string>NO</string>
+					<key>ShadowVector</key>
+					<string>{0, 2}</string>
+				</dict>
+				<key>stroke</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+			</dict>
+			<key>Text</key>
+			<dict>
+				<key>Text</key>
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf470
+{\fonttbl\f0\froman\fcharset0 Palatino-Roman;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs36 \cf0 DqdObserverSet.h}</string>
+			</dict>
+			<key>TextPlacement</key>
+			<integer>0</integer>
+			<key>Wrap</key>
+			<string>NO</string>
+		</dict>
+		<dict>
+			<key>Bounds</key>
+			<string>{{9, 234}, {284.33334350585938, 461}}</string>
+			<key>Class</key>
+			<string>ShapedGraphic</string>
+			<key>FitText</key>
+			<string>Vertical</string>
+			<key>Flow</key>
+			<string>Resize</string>
+			<key>FontInfo</key>
+			<dict>
+				<key>Font</key>
+				<string>Palatino-Roman</string>
+				<key>Size</key>
+				<real>18</real>
+			</dict>
+			<key>ID</key>
+			<integer>10</integer>
+			<key>Shape</key>
+			<string>Rectangle</string>
+			<key>Style</key>
+			<dict>
+				<key>fill</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>shadow</key>
+				<dict>
+					<key>Beneath</key>
+					<string>YES</string>
+					<key>Color</key>
+					<dict>
+						<key>a</key>
+						<string>0.25</string>
+						<key>b</key>
+						<string>0</string>
+						<key>g</key>
+						<string>0</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
+					<key>Draws</key>
+					<string>NO</string>
+					<key>ShadowVector</key>
+					<string>{0, 2}</string>
+				</dict>
+				<key>stroke</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+			</dict>
+			<key>Text</key>
+			<dict>
+				<key>Align</key>
+				<integer>0</integer>
+				<key>Text</key>
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset0 Elena-Regular;\f1\fnil\fcharset0 LuxiMono;}
+{\colortbl;\red255\green255\blue255;\red100\green56\blue32;\red196\green26\blue22;\red170\green13\blue145;
+\red92\green38\blue153;\red63\green110\blue116;\red46\green13\blue110;\red38\green71\blue75;\red0\green116\blue0;
+\red28\green0\blue207;}
+\deftab320
+\pard\tx320\pardeftab320\pardirnatural
+
+\f0\fs18 \cf2 \CocoaLigature0 #import 
+\f1\fs16 \cf3 "DqdObserverSet.h"
+\f0\fs18 \cf2 \
+#import 
+\f1\fs16 \cf3 &lt;objc/runtime.h&gt;
+\f0\fs18 \cf2 \
+\cf0 \
+\cf4 @interface\cf0  DqdObserverSetMessageProxy : \cf5 NSObject\cf0 \
+\cf4 @property\cf0  (\cf4 nonatomic\cf0 ,\cf4 unsafe_unretained\cf0 ) \cf6 DqdObserverSet\cf0  *observerSet;\
+\cf4 @end\cf0 \
+\
+\cf4 @implementation\cf0  DqdObserverSet \{\
+    \cf5 NSMutableSet\cf0  *observers_;\
+    \cf5 NSMutableSet\cf0  *pendingObservers_;\
+\}\
+\
+\cf2 #pragma mark - Public API\
+\cf0 \
+\cf4 @synthesize\cf0  proxy = _proxy;\
+\cf4 @synthesize\cf0  protocol = _protocol;\
+\
+\pard\tx604\pardeftab604\pardirnatural
+\cf0 - (\cf4 id\cf0 )initWithProtocol:(\cf5 Protocol\cf0  *)protocol \{\
+    \cf4 if\cf0  (\cf4 self\cf0  = [\cf4 super\cf0  \cf7 init\cf0 ]) \{\
+        \cf6 _protocol\cf0  = protocol;\
+        \cf6 _proxy\cf0  = [[\cf6 DqdObserverSetMessageProxy\cf0  \cf7 alloc\cf0 ] \cf7 init\cf0 ];\
+        [\cf6 _proxy\cf0  \cf8 setObserverSet\cf0 :\cf4 self\cf0 ];\
+\
+        \cf9 // Create a non-retaining set.\cf0 \
+        \cf6 observers_\cf0  = \cf7 CFBridgingRelease\cf0 (\cf7 CFSetCreateMutable\cf0 (\cf4 NULL\cf0 , \cf10 0\cf0 ,\
+            &amp;(\cf5 CFSetCallBacks\cf0 )\{\
+                .\cf5 equal\cf0  = \cf5 kCFTypeSetCallBacks\cf0 .\cf5 equal\cf0 ,\
+                .\cf5 hash\cf0  = \cf5 kCFTypeSetCallBacks\cf0 .\cf5 hash\cf0 \
+        \}));\
+    \}\
+    \cf4 return\cf0  \cf4 self\cf0 ;\
+\}\
+\pard\tx320\pardeftab320\pardirnatural
+\cf0 \
+\pard\tx604\pardeftab604\pardirnatural
+\cf0 - (\cf4 void\cf0 )addObserver:(\cf4 id\cf0 )observer \{\
+    [\cf6 observers_\cf0  \cf7 addObject\cf0 :observer];\
+\}\
+\pard\tx320\pardeftab320\pardirnatural
+\cf0 \
+- (\cf4 void\cf0 )removeObserver:(\cf4 id\cf0 )observer \{\
+    [\cf6 observers_\cf0  \cf7 removeObject\cf0 :observer];\
+    [\cf6 pendingObservers_\cf0  \cf7 removeObject\cf0 :observer];\
+\}}</string>
+			</dict>
+			<key>TextPlacement</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>Bounds</key>
+			<string>{{33.83333333333325, 42.666667938232422}, {518, 142}}</string>
+			<key>Class</key>
+			<string>ShapedGraphic</string>
+			<key>FitText</key>
+			<string>Vertical</string>
+			<key>Flow</key>
+			<string>Resize</string>
+			<key>FontInfo</key>
+			<dict>
+				<key>Font</key>
+				<string>Palatino-Roman</string>
+				<key>Size</key>
+				<real>17</real>
+			</dict>
+			<key>ID</key>
+			<integer>9</integer>
+			<key>Shape</key>
+			<string>Rectangle</string>
+			<key>Style</key>
+			<dict>
+				<key>fill</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>shadow</key>
+				<dict>
+					<key>Beneath</key>
+					<string>YES</string>
+					<key>Color</key>
+					<dict>
+						<key>a</key>
+						<string>0.25</string>
+						<key>b</key>
+						<string>0</string>
+						<key>g</key>
+						<string>0</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
+					<key>Draws</key>
+					<string>NO</string>
+					<key>ShadowVector</key>
+					<string>{0, 2}</string>
+				</dict>
+				<key>stroke</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+			</dict>
+			<key>Text</key>
+			<dict>
+				<key>Align</key>
+				<integer>0</integer>
+				<key>Text</key>
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset0 Elena-Regular;}
+{\colortbl;\red255\green255\blue255;\red170\green13\blue145;\red92\green38\blue153;\red0\green116\blue0;
+}
+\deftab320
+\pard\tx4786\pardeftab320\pardirnatural
+
+\f0\fs18 \cf2 \CocoaLigature0 @interface\cf0  DqdObserverSet : \cf3 NSObject\cf0 \
+\
+- (\cf2 id\cf0 )initWithProtocol:(\cf3 Protocol\cf0  *)protocol;	\cf4 // Configure me to send messages defined in this protocol.\cf0 \
+\
+\cf2 @property\cf0  (\cf2 nonatomic\cf0 , \cf2 strong\cf0 , \cf2 readonly\cf0 ) \cf3 Protocol\cf0  *protocol;\
+\
+- (\cf2 void\cf0 )addObserver:(\cf2 id\cf0 )observer;	\cf4 // Add an observer that should receive protocol messages.\cf0 \
+- (\cf2 void\cf0 )removeObserver:(\cf2 id\cf0 )observer;	\cf4 // Remove an observer that should no longer receive protocol messages.\cf0 \
+\
+\cf2 @property\cf0  (\cf2 nonatomic\cf0 , \cf2 strong\cf0 , \cf2 readonly\cf0 ) \cf2 id\cf0  proxy;	\cf4 // This object forwards any message in the protocol to all observers\
+\cf2 	\cf4 // that implement it.\cf0 \
+\cf2 @end}</string>
+			</dict>
+			<key>TextPlacement</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>Bounds</key>
+			<string>{{297, 225}, {270, 516}}</string>
+			<key>Class</key>
+			<string>ShapedGraphic</string>
+			<key>FitText</key>
+			<string>Vertical</string>
+			<key>Flow</key>
+			<string>Resize</string>
+			<key>FontInfo</key>
+			<dict>
+				<key>Font</key>
+				<string>Palatino-Roman</string>
+				<key>Size</key>
+				<real>18</real>
+			</dict>
+			<key>ID</key>
+			<integer>7</integer>
+			<key>Shape</key>
+			<string>Rectangle</string>
+			<key>Style</key>
+			<dict>
+				<key>fill</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>shadow</key>
+				<dict>
+					<key>Beneath</key>
+					<string>YES</string>
+					<key>Color</key>
+					<dict>
+						<key>a</key>
+						<string>0.25</string>
+						<key>b</key>
+						<string>0</string>
+						<key>g</key>
+						<string>0</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
+					<key>Draws</key>
+					<string>NO</string>
+					<key>ShadowVector</key>
+					<string>{0, 2}</string>
+				</dict>
+				<key>stroke</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+			</dict>
+			<key>Text</key>
+			<dict>
+				<key>Align</key>
+				<integer>0</integer>
+				<key>Text</key>
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset0 Elena-Regular;\f1\fnil\fcharset0 LuxiMono;}
+{\colortbl;\red255\green255\blue255;\red100\green56\blue32;\red170\green13\blue145;\red92\green38\blue153;
+\red63\green110\blue116;\red196\green26\blue22;\red46\green13\blue110;\red28\green0\blue207;\red38\green71\blue75;
+}
+\deftab320
+\pard\tx320\pardeftab320\pardirnatural
+
+\f0\fs18 \cf2 \CocoaLigature0 #pragma mark - DqdObserverSetMessageProxy API\
+\cf0 \
+\pard\tx604\pardeftab604\pardirnatural
+\cf0 - (\cf3 void\cf0 )forwardInvocationToObservers:(\cf4 NSInvocation\cf0  *)invocation \{\
+    \cf2 NSAssert\cf0 (\cf5 pendingObservers_\cf0  == \cf3 nil\cf0 , 
+\f1\fs16 \cf6 @"recursive "
+\f0\fs18 \cf0 \
+        
+\f1\fs16 \cf6 "notification not supported"
+\f0\fs18 \cf0 );\
+    \cf5 pendingObservers_\cf0  = \cf7 CFBridgingRelease\cf0 (\
+        \cf7 CFSetCreateMutableCopy\cf0 (\cf3 NULL\cf0 , \cf8 0\cf0 ,\
+            (\cf3 __bridge\cf0  \cf4 CFTypeRef\cf0 )\cf5 observers_\cf0 ));\
+    \cf3 while\cf0  (\cf5 pendingObservers_\cf0 .\cf7 count\cf0  &gt; \cf8 0\cf0 ) \{\
+        \cf3 id\cf0  observer = \cf5 pendingObservers_\cf0 .\cf7 anyObject\cf0 ;\
+        [\cf5 pendingObservers_\cf0  \cf7 removeObject\cf0 :observer];\
+        \cf3 if\cf0  ([observer \cf7 respondsToSelector\cf0 :invocation.\cf7 selector\cf0 ]) \{\
+            [invocation \cf7 invokeWithTarget\cf0 :observer];\
+        \}\
+    \}\
+    \cf5 pendingObservers_\cf0  = \cf3 nil\cf0 ;\
+\}\
+\pard\tx320\pardeftab320\pardirnatural
+\cf0 \
+- (\cf4 NSMethodSignature\cf0  *)protocolMethodSignatureForSelector:(\cf3 SEL\cf0 )selector \{\
+    \cf3 struct\cf0  \cf4 objc_method_description\cf0  description =\
+        \cf7 protocol_getMethodDescription\cf0 (\cf5 _protocol\cf0 , selector, \cf3 YES\cf0 , \cf3 YES\cf0 );\
+    \cf3 if\cf0  (!description.\cf4 name\cf0 ) \{\
+        description = \cf7 protocol_getMethodDescription\cf0 (\cf5 _protocol\cf0 , selector,\
+            \cf3 NO\cf0 , \cf3 YES\cf0 );\
+    \}\
+    \cf3 return\cf0  [\cf4 NSMethodSignature\cf0 \
+        \cf7 signatureWithObjCTypes\cf0 :description.\cf4 types\cf0 ];\
+\}\
+\
+\cf3 @end\cf0 \
+\
+\cf3 @implementation\cf0  DqdObserverSetMessageProxy\
+\
+\cf3 @synthesize\cf0  observerSet = _observerSet;\
+\
+- (\cf4 NSMethodSignature\cf0  *)methodSignatureForSelector:(\cf3 SEL\cf0 )aSelector \{\
+    \cf3 return\cf0  [\cf3 self\cf0 .\cf5 observerSet\cf0 \
+        \cf9 protocolMethodSignatureForSelector\cf0 :aSelector];\
+\}\
+\
+- (\cf3 void\cf0 )forwardInvocation:(\cf4 NSInvocation\cf0  *)anInvocation \{\
+    [\cf3 self\cf0 .\cf5 observerSet\cf0  \cf9 forwardInvocationToObservers\cf0 :anInvocation];\
+\}\
+\
+\cf3 @end}</string>
+			</dict>
+			<key>TextPlacement</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>GridInfo</key>
+	<dict/>
+	<key>GuidesLocked</key>
+	<string>NO</string>
+	<key>GuidesVisible</key>
+	<string>YES</string>
+	<key>HPages</key>
+	<integer>1</integer>
+	<key>ImageCounter</key>
+	<integer>1</integer>
+	<key>KeepToScale</key>
+	<false/>
+	<key>Layers</key>
+	<array>
+		<dict>
+			<key>Lock</key>
+			<string>NO</string>
+			<key>Name</key>
+			<string>Layer 1</string>
+			<key>Print</key>
+			<string>YES</string>
+			<key>View</key>
+			<string>YES</string>
+		</dict>
+	</array>
+	<key>LayoutInfo</key>
+	<dict>
+		<key>Animate</key>
+		<string>NO</string>
+		<key>circoMinDist</key>
+		<real>18</real>
+		<key>circoSeparation</key>
+		<real>0.0</real>
+		<key>layoutEngine</key>
+		<string>dot</string>
+		<key>neatoSeparation</key>
+		<real>0.0</real>
+		<key>twopiSeparation</key>
+		<real>0.0</real>
+	</dict>
+	<key>LinksVisible</key>
+	<string>NO</string>
+	<key>MagnetsVisible</key>
+	<string>NO</string>
+	<key>MasterSheets</key>
+	<array/>
+	<key>ModificationDate</key>
+	<string>2012-08-16 23:12:04 +0000</string>
+	<key>Modifier</key>
+	<string>Rob Mayoff</string>
+	<key>NotesVisible</key>
+	<string>NO</string>
+	<key>Orientation</key>
+	<integer>2</integer>
+	<key>OriginVisible</key>
+	<string>NO</string>
+	<key>PageBreaks</key>
+	<string>YES</string>
+	<key>PrintInfo</key>
+	<dict>
+		<key>NSBottomMargin</key>
+		<array>
+			<string>float</string>
+			<string>18</string>
+		</array>
+		<key>NSHorizonalPagination</key>
+		<array>
+			<string>coded</string>
+			<string>BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU051bWJlcgCEhAdOU1ZhbHVlAISECE5TT2JqZWN0AIWEASqEhAFxlwCG</string>
+		</array>
+		<key>NSLeftMargin</key>
+		<array>
+			<string>float</string>
+			<string>18</string>
+		</array>
+		<key>NSPaperSize</key>
+		<array>
+			<string>size</string>
+			<string>{612, 792}</string>
+		</array>
+		<key>NSPrintReverseOrientation</key>
+		<array>
+			<string>int</string>
+			<string>0</string>
+		</array>
+		<key>NSRightMargin</key>
+		<array>
+			<string>float</string>
+			<string>18</string>
+		</array>
+		<key>NSTopMargin</key>
+		<array>
+			<string>float</string>
+			<string>18</string>
+		</array>
+	</dict>
+	<key>PrintOnePage</key>
+	<false/>
+	<key>ReadOnly</key>
+	<string>NO</string>
+	<key>RowAlign</key>
+	<integer>0</integer>
+	<key>RowSpacing</key>
+	<real>36</real>
+	<key>SheetTitle</key>
+	<string>Canvas 1</string>
+	<key>SmartAlignmentGuidesActive</key>
+	<string>YES</string>
+	<key>SmartDistanceGuidesActive</key>
+	<string>YES</string>
+	<key>UniqueID</key>
+	<integer>1</integer>
+	<key>UseEntirePage</key>
+	<false/>
+	<key>VPages</key>
+	<integer>1</integer>
+	<key>WindowInfo</key>
+	<dict>
+		<key>CurrentSheet</key>
+		<integer>0</integer>
+		<key>ExpandedCanvases</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>Canvas 1</string>
+			</dict>
+		</array>
+		<key>Frame</key>
+		<string>{{363, -0}, {1671, 1578}}</string>
+		<key>ListView</key>
+		<true/>
+		<key>OutlineWidth</key>
+		<integer>142</integer>
+		<key>RightSidebar</key>
+		<false/>
+		<key>ShowRuler</key>
+		<true/>
+		<key>Sidebar</key>
+		<true/>
+		<key>SidebarWidth</key>
+		<integer>120</integer>
+		<key>VisibleRegion</key>
+		<string>{{-224, -96}, {1024, 948.66666666666663}}</string>
+		<key>Zoom</key>
+		<real>1.5</real>
+		<key>ZoomValues</key>
+		<array>
+			<array>
+				<string>Canvas 1</string>
+				<real>1.5</real>
+				<real>2</real>
+			</array>
+		</array>
+	</dict>
+</dict>
+</plist>
