@@ -19,12 +19,7 @@
         _protocol = protocol;
         _proxy = [[DqdObserverSetMessageProxy alloc] init];
         [_proxy setObserverSet:self];
-    }
-    return self;
-}
 
-- (void)addObserver:(id)observer {
-    if (!observers_) {
         // Create a non-retaining set.
         observers_ = CFBridgingRelease(CFSetCreateMutable(NULL, 0,
             &(CFSetCallBacks){
@@ -32,6 +27,10 @@
                 .hash = kCFTypeSetCallBacks.hash
         }));
     }
+    return self;
+}
+
+- (void)addObserver:(id)observer {
     [observers_ addObject:observer];
 }
 
