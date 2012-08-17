@@ -1,3 +1,8 @@
+/*
+Created by Rob Mayoff on 7/30/12.
+This file is public domain.
+*/
+
 #import "DqdObserverSet.h"
 #import <objc/runtime.h>
 

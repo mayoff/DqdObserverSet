@@ -1,3 +1,10 @@
+/*
+Created by Rob Mayoff on 7/30/12.
+This file is public domain.
+*/
+
+#import <Foundation/Foundation.h>
+
 @interface DqdObserverSet : NSObject
 
 - (id)initWithProtocol:(Protocol *)protocol;	// Configure me to send messages defined in this protocol.
