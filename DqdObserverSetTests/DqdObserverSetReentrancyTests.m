@@ -13,6 +13,7 @@ This file is public domain.
 @interface ReentrantTestObserver : NSObject <ReentrantTestProtocol>
 @property (nonatomic, strong) dispatch_block_t block;
 @property (nonatomic) BOOL receivedMessage;
+@property (nonatomic) BOOL *didDeallocPointer;
 @end
 
 @implementation DqdObserverSetReentrancyTests {
@@ -98,17 +99,24 @@ This file is public domain.
 }
 
 - (void)testObserverSetDoesNotCrashWhenObservedIsRemovedAndDeallocatedWhileInCallback {
+    __block BOOL observer0DidDealloc = NO;
+    __block BOOL observer1DidDealloc = NO;
+
     __unsafe_unretained DqdObserverSetReentrancyTests *me = self;
-    observer0_.block = ^{
+    observer0_.block = [^{
         DqdObserverSetReentrancyTests *self = me;
-        [me->observerSet_ removeObserver:me->observer0_];
-        STAssertEquals(CFGetRetainCount((__bridge CFTypeRef)me->observer0_), (CFIndex)1, @"observer0_ retain count must be exactly 1 so I know it will be deallocated");
-        me->observer0_ = nil;
-        [me->observerSet_ removeObserver:me->observer1_];
-        STAssertEquals(CFGetRetainCount((__bridge CFTypeRef)me->observer1_), (CFIndex)1, @"observer1_ retain count must be exactly 1 so I know it will be deallocated");
-        me->observer1_ = nil;
-    };
+        [self->observerSet_ removeObserver:self->observer0_];
+        self->observer0_ = nil;
+        STAssertTrue(observer0DidDealloc, @"observer0_ was deallocated");
+        [self->observerSet_ removeObserver:self->observer1_];
+        self->observer1_ = nil;
+        STAssertTrue(observer1DidDealloc, @"observer1_ was deallocated");
+    } copy];
     observer1_.block = observer0_.block;
+
+    // I have to set these *after* creating the block, because copying the block to the heap changes the address of the __block variables.
+    observer0_.didDeallocPointer = &observer0DidDealloc;
+    observer1_.didDeallocPointer = &observer1DidDealloc;
     [observerSet_ addObserver:observer0_];
     [observerSet_ addObserver:observer1_];
     [observerSet_.proxy message];
@@ -117,6 +125,12 @@ This file is public domain.
 @end
 
 @implementation ReentrantTestObserver
+
+- (void)dealloc {
+    if (_didDeallocPointer) {
+        *_didDeallocPointer = YES;
+    }
+}
 
 - (void)message {
     _receivedMessage = YES;
