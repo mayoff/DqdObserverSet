@@ -11,16 +11,7 @@ This file is public domain.
 @end
 
 static NSMutableSet *nonRetainingSet(void) {
-    CFSetCallBacks callbacks = {
-        .version = 0,
-        .retain = NULL,
-        .release = NULL,
-        .copyDescription = kCFTypeSetCallBacks.copyDescription,
-        .equal = kCFTypeSetCallBacks.equal,
-        .hash = kCFTypeSetCallBacks.hash
-
-    };
-    return CFBridgingRelease(CFSetCreateMutable(NULL, 0, &callbacks));
+    return CFBridgingRelease(CFSetCreateMutable(NULL, 0, NULL));
 }
 
 @implementation DqdObserverSet {
