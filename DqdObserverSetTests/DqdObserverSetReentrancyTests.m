@@ -97,6 +97,23 @@ This file is public domain.
     STAssertTrue(observer1_.receivedMessage, @"observer1 received a message on the second send");
 }
 
+- (void)testObserverSetDoesNotCrashWhenObservedIsRemovedAndDeallocatedWhileInCallback {
+    __unsafe_unretained DqdObserverSetReentrancyTests *me = self;
+    observer0_.block = ^{
+        DqdObserverSetReentrancyTests *self = me;
+        [me->observerSet_ removeObserver:me->observer0_];
+        STAssertEquals(CFGetRetainCount((__bridge CFTypeRef)me->observer0_), (CFIndex)1, @"observer0_ retain count must be exactly 1 so I know it will be deallocated");
+        me->observer0_ = nil;
+        [me->observerSet_ removeObserver:me->observer1_];
+        STAssertEquals(CFGetRetainCount((__bridge CFTypeRef)me->observer1_), (CFIndex)1, @"observer1_ retain count must be exactly 1 so I know it will be deallocated");
+        me->observer1_ = nil;
+    };
+    observer1_.block = observer0_.block;
+    [observerSet_ addObserver:observer0_];
+    [observerSet_ addObserver:observer1_];
+    [observerSet_.proxy message];
+}
+
 @end
 
 @implementation ReentrantTestObserver
