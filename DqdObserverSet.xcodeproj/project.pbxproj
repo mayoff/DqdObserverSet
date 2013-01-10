@@ -7,22 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3121665015C87D8300A1570B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FF7A3C15C7293200260FDF /* UIKit.framework */; };
+		310071A61644579D00FF32CA /* DqdObserverSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF7A3215C7293100260FDF /* DqdObserverSet.m */; };
 		3121665115C87D8300A1570B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FF7A2B15C7293100260FDF /* Foundation.framework */; };
 		3121665315C87D8300A1570B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3121665215C87D8300A1570B /* CoreGraphics.framework */; };
 		3121665915C87D8300A1570B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3121665715C87D8300A1570B /* InfoPlist.strings */; };
 		3121665B15C87D8300A1570B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3121665A15C87D8300A1570B /* main.m */; };
-		3121666415C87D9000A1570B /* libDqdObserverSet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FF7A2815C7293100260FDF /* libDqdObserverSet.a */; };
 		31C3262015C9A2DB00DF55B8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C3261F15C9A2DB00DF55B8 /* ViewController.m */; };
 		31C3262415C9A41100DF55B8 /* PerformanceTestObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C3262315C9A41100DF55B8 /* PerformanceTestObserver.m */; };
 		31C3262715C9A49900DF55B8 /* PerformanceTestObserverWithOptionalMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C3262615C9A49900DF55B8 /* PerformanceTestObserverWithOptionalMessages.m */; };
 		31D216E115C9A11800CE6EFC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D216E015C9A11800CE6EFC /* AppDelegate.m */; };
 		31D216E715C9A17800CE6EFC /* MainInterface.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D216E615C9A17800CE6EFC /* MainInterface.xib */; };
+		31DA080C169E8AD8007D1956 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31DA080B169E8AD8007D1956 /* Cocoa.framework */; };
+		31DA080E169E8AE4007D1956 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31DA080D169E8AE4007D1956 /* UIKit.framework */; };
+		31DA080F169E8AFC007D1956 /* libDqdObserverSet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FF7A2815C7293100260FDF /* libDqdObserverSet.a */; };
 		31FF7A2C15C7293100260FDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FF7A2B15C7293100260FDF /* Foundation.framework */; };
 		31FF7A3115C7293100260FDF /* DqdObserverSet.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 31FF7A3015C7293100260FDF /* DqdObserverSet.h */; };
 		31FF7A3315C7293100260FDF /* DqdObserverSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF7A3215C7293100260FDF /* DqdObserverSet.m */; };
 		31FF7A3B15C7293200260FDF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FF7A3A15C7293200260FDF /* SenTestingKit.framework */; };
-		31FF7A3D15C7293200260FDF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FF7A3C15C7293200260FDF /* UIKit.framework */; };
 		31FF7A3E15C7293200260FDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FF7A2B15C7293100260FDF /* Foundation.framework */; };
 		31FF7A4115C7293200260FDF /* libDqdObserverSet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FF7A2815C7293100260FDF /* libDqdObserverSet.a */; };
 		31FF7A4715C7293200260FDF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 31FF7A4515C7293200260FDF /* InfoPlist.strings */; };
@@ -54,6 +55,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		310071951644578600FF32CA /* libDqdObserverSetMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDqdObserverSetMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		310071991644578600FF32CA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		3100719A1644578600FF32CA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3100719B1644578600FF32CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		310303C215DE0C780032DF45 /* COPYRIGHT */ = {isa = PBXFileReference; lastKnownFileType = text; path = COPYRIGHT; sourceTree = "<group>"; };
 		310303C315DE0C780032DF45 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		3121664E15C87D8300A1570B /* DqdObserverSetPerformanceTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DqdObserverSetPerformanceTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +77,8 @@
 		31D216DF15C9A11800CE6EFC /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		31D216E015C9A11800CE6EFC /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		31D216E615C9A17800CE6EFC /* MainInterface.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainInterface.xib; sourceTree = "<group>"; };
+		31DA080B169E8AD8007D1956 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		31DA080D169E8AE4007D1956 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		31FF7A2815C7293100260FDF /* libDqdObserverSet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDqdObserverSet.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		31FF7A2B15C7293100260FDF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		31FF7A2F15C7293100260FDF /* DqdObserverSet-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DqdObserverSet-Prefix.pch"; sourceTree = "<group>"; };
@@ -79,7 +86,6 @@
 		31FF7A3215C7293100260FDF /* DqdObserverSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DqdObserverSet.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		31FF7A3915C7293200260FDF /* DqdObserverSetTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DqdObserverSetTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31FF7A3A15C7293200260FDF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		31FF7A3C15C7293200260FDF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		31FF7A4415C7293200260FDF /* DqdObserverSetTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DqdObserverSetTests-Info.plist"; sourceTree = "<group>"; };
 		31FF7A4615C7293200260FDF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		31FF7A4815C7293200260FDF /* DqdObserverSetTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = DqdObserverSetTests.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -89,12 +95,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		310071921644578600FF32CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31DA080C169E8AD8007D1956 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3121664B15C87D8300A1570B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3121666415C87D9000A1570B /* libDqdObserverSet.a in Frameworks */,
-				3121665015C87D8300A1570B /* UIKit.framework in Frameworks */,
+				31DA080F169E8AFC007D1956 /* libDqdObserverSet.a in Frameworks */,
+				31DA080E169E8AE4007D1956 /* UIKit.framework in Frameworks */,
 				3121665115C87D8300A1570B /* Foundation.framework in Frameworks */,
 				3121665315C87D8300A1570B /* CoreGraphics.framework in Frameworks */,
 			);
@@ -113,7 +127,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				31FF7A3B15C7293200260FDF /* SenTestingKit.framework in Frameworks */,
-				31FF7A3D15C7293200260FDF /* UIKit.framework in Frameworks */,
 				31FF7A3E15C7293200260FDF /* Foundation.framework in Frameworks */,
 				31FF7A4115C7293200260FDF /* libDqdObserverSet.a in Frameworks */,
 			);
@@ -122,6 +135,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		310071981644578600FF32CA /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				310071991644578600FF32CA /* AppKit.framework */,
+				3100719A1644578600FF32CA /* CoreData.framework */,
+				3100719B1644578600FF32CA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
 		3121665415C87D8300A1570B /* DqdObserverSetPerformanceTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +193,7 @@
 				31FF7A2815C7293100260FDF /* libDqdObserverSet.a */,
 				31FF7A3915C7293200260FDF /* DqdObserverSetTests.octest */,
 				3121664E15C87D8300A1570B /* DqdObserverSetPerformanceTest.app */,
+				310071951644578600FF32CA /* libDqdObserverSetMac.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,8 +203,10 @@
 			children = (
 				31FF7A2B15C7293100260FDF /* Foundation.framework */,
 				31FF7A3A15C7293200260FDF /* SenTestingKit.framework */,
-				31FF7A3C15C7293200260FDF /* UIKit.framework */,
+				31DA080B169E8AD8007D1956 /* Cocoa.framework */,
+				31DA080D169E8AE4007D1956 /* UIKit.framework */,
 				3121665215C87D8300A1570B /* CoreGraphics.framework */,
+				310071981644578600FF32CA /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -226,7 +252,34 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		310071931644578600FF32CA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		310071941644578600FF32CA /* DqdObserverSetMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 310071A41644578600FF32CA /* Build configuration list for PBXNativeTarget "DqdObserverSetMac" */;
+			buildPhases = (
+				310071911644578600FF32CA /* Sources */,
+				310071921644578600FF32CA /* Frameworks */,
+				310071931644578600FF32CA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DqdObserverSetMac;
+			productName = DqdObserverSetMac;
+			productReference = 310071951644578600FF32CA /* libDqdObserverSetMac.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		3121664D15C87D8300A1570B /* DqdObserverSetPerformanceTest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3121666215C87D8300A1570B /* Build configuration list for PBXNativeTarget "DqdObserverSetPerformanceTest" */;
@@ -304,6 +357,7 @@
 				31FF7A2715C7293100260FDF /* DqdObserverSet */,
 				31FF7A3815C7293100260FDF /* DqdObserverSetTests */,
 				3121664D15C87D8300A1570B /* DqdObserverSetPerformanceTest */,
+				310071941644578600FF32CA /* DqdObserverSetMac */,
 			);
 		};
 /* End PBXProject section */
@@ -345,6 +399,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		310071911644578600FF32CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				310071A61644579D00FF32CA /* DqdObserverSet.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3121664A15C87D8300A1570B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -404,6 +466,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		310071A21644578600FF32CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode452-GMSeed.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DqdObserverSet/DqdObserverSet-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		310071A31644578600FF32CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode452-GMSeed.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DqdObserverSet/DqdObserverSet-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		3121666015C87D8300A1570B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -540,6 +644,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		310071A41644578600FF32CA /* Build configuration list for PBXNativeTarget "DqdObserverSetMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				310071A21644578600FF32CA /* Debug */,
+				310071A31644578600FF32CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3121666215C87D8300A1570B /* Build configuration list for PBXNativeTarget "DqdObserverSetPerformanceTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
